@@ -1,0 +1,22 @@
+{
+  "name": "express-platzi",
+  "version": "1.0.0",
+  "description": "curso de express js",
+  "keywords": [
+    "['expressjs']"
+  ],
+  "license": "MIT",
+  "author": "Miguel Angel Sandoval",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}
