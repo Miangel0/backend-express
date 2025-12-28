@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const LoggerMiddleware = require('./middlewares/logger.js')
-
+const errorHandler = require('./middlewares/errorHandler.js')
 const { validateUser } = require('./utils/validation.js');
 
 const fs = require('fs');
@@ -15,6 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(LoggerMiddleware); 
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
@@ -142,6 +143,10 @@ app.delete('/users/:id', (req, res) => {
          });
     });
 });
+
+app.get('/error', (req, res, next) => {
+    next(new Error('Error intencional'))
+})
 
 
 app.listen(PORT, () => {
