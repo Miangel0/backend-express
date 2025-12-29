@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 🚀 Backend con Express
 
@@ -125,5 +126,3 @@ Puedes usarlo y modificarlo libremente.
 
 **Miguel (Miangel0)**
 GitHub: [https://github.com/Miangel0](https://github.com/Miangel0)
-
-

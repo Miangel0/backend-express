@@ -1,5 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+
+const { PrismaPg } = require('@prisma/adapter-pg');
+const { PrismaClient } = require('./generated/prisma');
+const connectionString = `${process.env.DATABASE_URL}`;
+
+const adapter = new PrismaPg({ connectionString });
+const prisma = new PrismaClient({ adapter });
+
 const bodyParser = require('body-parser');
 
 const LoggerMiddleware = require('./middlewares/logger.js')
@@ -148,6 +156,14 @@ app.get('/error', (req, res, next) => {
     next(new Error('Error intencional'))
 })
 
+app.get('/db-users', async (req, res) => {
+    try {
+        const users = await prisma.user.findMany();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al comunicarse con la base de datos' })
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Servidor http://localhost:${PORT}`);
