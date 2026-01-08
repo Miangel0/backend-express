@@ -10,10 +10,10 @@ const prisma = new PrismaClient({ adapter });
 
 const bodyParser = require('body-parser');
 
-const LoggerMiddleware = require('./middlewares/logger.js')
-const errorHandler = require('./middlewares/errorHandler.js')
-const { validateUser } = require('./utils/validation.js');
-const authenticatedToken = require('./middlewares/auth');
+const LoggerMiddleware = require('./src/middlewares/logger.js')
+const errorHandler = require('./src/middlewares/errorHandler.js')
+const { validateUser } = require('./src/utils/validation.js');
+const authenticatedToken = require('./src/middlewares/auth.js');
 
 const fs = require('fs');
 const path =require('path')
