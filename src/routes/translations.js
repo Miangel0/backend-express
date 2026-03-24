@@ -8,7 +8,6 @@ const translationController = require('../controllers/translationController');
 
 router.post(
   '/',
-  authenticateToken,
   upload.single('video'),
   checkFileUpload,
   translationController.uploadAndTranslate.bind(translationController)
@@ -16,25 +15,21 @@ router.post(
 
 router.get(
   '/',
-  authenticateToken,
   translationController.getTranslations.bind(translationController)
 );
 
 router.get(
   '/stats',
-  authenticateToken,
   translationController.getStats.bind(translationController)
 );
 
 router.get(
   '/:id',
-  authenticateToken,
   translationController.getTranslation.bind(translationController)
 );
 
 router.delete(
   '/:id',
-  authenticateToken,
   translationController.deleteTranslation.bind(translationController)
 );
 // Error handling middleware for multer
