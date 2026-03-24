@@ -19,23 +19,23 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
- * Model Appointment
+ * Model Translation
  * 
  */
-export type Appointment = $Result.DefaultSelection<Prisma.$AppointmentPayload>
+export type Translation = $Result.DefaultSelection<Prisma.$TranslationPayload>
 /**
- * Model TimeBlock
+ * Model Gif
  * 
  */
-export type TimeBlock = $Result.DefaultSelection<Prisma.$TimeBlockPayload>
+export type Gif = $Result.DefaultSelection<Prisma.$GifPayload>
 
 /**
  * Enums
  */
 export namespace $Enums {
   export const Role: {
-  ADMIN: 'ADMIN',
-  USER: 'USER'
+  USER: 'USER',
+  ADMIN: 'ADMIN'
 };
 
 export type Role = (typeof Role)[keyof typeof Role]
@@ -174,24 +174,24 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.appointment`: Exposes CRUD operations for the **Appointment** model.
+   * `prisma.translation`: Exposes CRUD operations for the **Translation** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Appointments
-    * const appointments = await prisma.appointment.findMany()
+    * // Fetch zero or more Translations
+    * const translations = await prisma.translation.findMany()
     * ```
     */
-  get appointment(): Prisma.AppointmentDelegate<ExtArgs, ClientOptions>;
+  get translation(): Prisma.TranslationDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.timeBlock`: Exposes CRUD operations for the **TimeBlock** model.
+   * `prisma.gif`: Exposes CRUD operations for the **Gif** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more TimeBlocks
-    * const timeBlocks = await prisma.timeBlock.findMany()
+    * // Fetch zero or more Gifs
+    * const gifs = await prisma.gif.findMany()
     * ```
     */
-  get timeBlock(): Prisma.TimeBlockDelegate<ExtArgs, ClientOptions>;
+  get gif(): Prisma.GifDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -627,8 +627,8 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    Appointment: 'Appointment',
-    TimeBlock: 'TimeBlock'
+    Translation: 'Translation',
+    Gif: 'Gif'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -644,7 +644,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "appointment" | "timeBlock"
+      modelProps: "user" | "translation" | "gif"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -722,151 +722,151 @@ export namespace Prisma {
           }
         }
       }
-      Appointment: {
-        payload: Prisma.$AppointmentPayload<ExtArgs>
-        fields: Prisma.AppointmentFieldRefs
+      Translation: {
+        payload: Prisma.$TranslationPayload<ExtArgs>
+        fields: Prisma.TranslationFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.AppointmentFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload> | null
+            args: Prisma.TranslationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.AppointmentFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>
+            args: Prisma.TranslationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>
           }
           findFirst: {
-            args: Prisma.AppointmentFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload> | null
+            args: Prisma.TranslationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.AppointmentFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>
+            args: Prisma.TranslationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>
           }
           findMany: {
-            args: Prisma.AppointmentFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>[]
+            args: Prisma.TranslationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>[]
           }
           create: {
-            args: Prisma.AppointmentCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>
+            args: Prisma.TranslationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>
           }
           createMany: {
-            args: Prisma.AppointmentCreateManyArgs<ExtArgs>
+            args: Prisma.TranslationCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.AppointmentCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>[]
+            args: Prisma.TranslationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>[]
           }
           delete: {
-            args: Prisma.AppointmentDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>
+            args: Prisma.TranslationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>
           }
           update: {
-            args: Prisma.AppointmentUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>
+            args: Prisma.TranslationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>
           }
           deleteMany: {
-            args: Prisma.AppointmentDeleteManyArgs<ExtArgs>
+            args: Prisma.TranslationDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.AppointmentUpdateManyArgs<ExtArgs>
+            args: Prisma.TranslationUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.AppointmentUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>[]
+            args: Prisma.TranslationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>[]
           }
           upsert: {
-            args: Prisma.AppointmentUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppointmentPayload>
+            args: Prisma.TranslationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TranslationPayload>
           }
           aggregate: {
-            args: Prisma.AppointmentAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateAppointment>
+            args: Prisma.TranslationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTranslation>
           }
           groupBy: {
-            args: Prisma.AppointmentGroupByArgs<ExtArgs>
-            result: $Utils.Optional<AppointmentGroupByOutputType>[]
+            args: Prisma.TranslationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TranslationGroupByOutputType>[]
           }
           count: {
-            args: Prisma.AppointmentCountArgs<ExtArgs>
-            result: $Utils.Optional<AppointmentCountAggregateOutputType> | number
+            args: Prisma.TranslationCountArgs<ExtArgs>
+            result: $Utils.Optional<TranslationCountAggregateOutputType> | number
           }
         }
       }
-      TimeBlock: {
-        payload: Prisma.$TimeBlockPayload<ExtArgs>
-        fields: Prisma.TimeBlockFieldRefs
+      Gif: {
+        payload: Prisma.$GifPayload<ExtArgs>
+        fields: Prisma.GifFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.TimeBlockFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload> | null
+            args: Prisma.GifFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.TimeBlockFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>
+            args: Prisma.GifFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>
           }
           findFirst: {
-            args: Prisma.TimeBlockFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload> | null
+            args: Prisma.GifFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.TimeBlockFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>
+            args: Prisma.GifFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>
           }
           findMany: {
-            args: Prisma.TimeBlockFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>[]
+            args: Prisma.GifFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>[]
           }
           create: {
-            args: Prisma.TimeBlockCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>
+            args: Prisma.GifCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>
           }
           createMany: {
-            args: Prisma.TimeBlockCreateManyArgs<ExtArgs>
+            args: Prisma.GifCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.TimeBlockCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>[]
+            args: Prisma.GifCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>[]
           }
           delete: {
-            args: Prisma.TimeBlockDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>
+            args: Prisma.GifDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>
           }
           update: {
-            args: Prisma.TimeBlockUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>
+            args: Prisma.GifUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>
           }
           deleteMany: {
-            args: Prisma.TimeBlockDeleteManyArgs<ExtArgs>
+            args: Prisma.GifDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.TimeBlockUpdateManyArgs<ExtArgs>
+            args: Prisma.GifUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.TimeBlockUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>[]
+            args: Prisma.GifUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>[]
           }
           upsert: {
-            args: Prisma.TimeBlockUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TimeBlockPayload>
+            args: Prisma.GifUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GifPayload>
           }
           aggregate: {
-            args: Prisma.TimeBlockAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTimeBlock>
+            args: Prisma.GifAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGif>
           }
           groupBy: {
-            args: Prisma.TimeBlockGroupByArgs<ExtArgs>
-            result: $Utils.Optional<TimeBlockGroupByOutputType>[]
+            args: Prisma.GifGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GifGroupByOutputType>[]
           }
           count: {
-            args: Prisma.TimeBlockCountArgs<ExtArgs>
-            result: $Utils.Optional<TimeBlockCountAggregateOutputType> | number
+            args: Prisma.GifCountArgs<ExtArgs>
+            result: $Utils.Optional<GifCountAggregateOutputType> | number
           }
         }
       }
@@ -979,8 +979,8 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
-    appointment?: AppointmentOmit
-    timeBlock?: TimeBlockOmit
+    translation?: TranslationOmit
+    gif?: GifOmit
   }
 
   /* Types for Logging */
@@ -1061,11 +1061,11 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    appointments: number
+    translations: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    appointments?: boolean | UserCountOutputTypeCountAppointmentsArgs
+    translations?: boolean | UserCountOutputTypeCountTranslationsArgs
   }
 
   // Custom InputTypes
@@ -1082,39 +1082,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountAppointmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: AppointmentWhereInput
-  }
-
-
-  /**
-   * Count Type TimeBlockCountOutputType
-   */
-
-  export type TimeBlockCountOutputType = {
-    appointments: number
-  }
-
-  export type TimeBlockCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    appointments?: boolean | TimeBlockCountOutputTypeCountAppointmentsArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * TimeBlockCountOutputType without action
-   */
-  export type TimeBlockCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the TimeBlockCountOutputType
-     */
-    select?: TimeBlockCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * TimeBlockCountOutputType without action
-   */
-  export type TimeBlockCountOutputTypeCountAppointmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: AppointmentWhereInput
+  export type UserCountOutputTypeCountTranslationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TranslationWhereInput
   }
 
 
@@ -1144,26 +1113,32 @@ export namespace Prisma {
 
   export type UserMinAggregateOutputType = {
     id: number | null
-    name: string | null
     email: string | null
     password: string | null
+    name: string | null
     role: $Enums.Role | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type UserMaxAggregateOutputType = {
     id: number | null
-    name: string | null
     email: string | null
     password: string | null
+    name: string | null
     role: $Enums.Role | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type UserCountAggregateOutputType = {
     id: number
-    name: number
     email: number
     password: number
+    name: number
     role: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -1178,26 +1153,32 @@ export namespace Prisma {
 
   export type UserMinAggregateInputType = {
     id?: true
-    name?: true
     email?: true
     password?: true
+    name?: true
     role?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
-    name?: true
     email?: true
     password?: true
+    name?: true
     role?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type UserCountAggregateInputType = {
     id?: true
-    name?: true
     email?: true
     password?: true
+    name?: true
     role?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -1289,10 +1270,12 @@ export namespace Prisma {
 
   export type UserGroupByOutputType = {
     id: number
-    name: string
     email: string
     password: string
+    name: string
     role: $Enums.Role
+    createdAt: Date
+    updatedAt: Date
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1316,41 +1299,49 @@ export namespace Prisma {
 
   export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
     email?: boolean
     password?: boolean
+    name?: boolean
     role?: boolean
-    appointments?: boolean | User$appointmentsArgs<ExtArgs>
+    createdAt?: boolean
+    updatedAt?: boolean
+    translations?: boolean | User$translationsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
     email?: boolean
     password?: boolean
+    name?: boolean
     role?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
     email?: boolean
     password?: boolean
+    name?: boolean
     role?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
-    name?: boolean
     email?: boolean
     password?: boolean
+    name?: boolean
     role?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "role", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "name" | "role" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    appointments?: boolean | User$appointmentsArgs<ExtArgs>
+    translations?: boolean | User$translationsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1359,14 +1350,16 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      appointments: Prisma.$AppointmentPayload<ExtArgs>[]
+      translations: Prisma.$TranslationPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      name: string
       email: string
       password: string
+      name: string
       role: $Enums.Role
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1761,7 +1754,7 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    appointments<T extends User$appointmentsArgs<ExtArgs> = {}>(args?: Subset<T, User$appointmentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    translations<T extends User$translationsArgs<ExtArgs> = {}>(args?: Subset<T, User$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1792,10 +1785,12 @@ export namespace Prisma {
    */
   interface UserFieldRefs {
     readonly id: FieldRef<"User", 'Int'>
-    readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
+    readonly name: FieldRef<"User", 'String'>
     readonly role: FieldRef<"User", 'Role'>
+    readonly createdAt: FieldRef<"User", 'DateTime'>
+    readonly updatedAt: FieldRef<"User", 'DateTime'>
   }
     
 
@@ -2184,27 +2179,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.appointments
+   * User.translations
    */
-  export type User$appointmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$translationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
-    where?: AppointmentWhereInput
-    orderBy?: AppointmentOrderByWithRelationInput | AppointmentOrderByWithRelationInput[]
-    cursor?: AppointmentWhereUniqueInput
+    include?: TranslationInclude<ExtArgs> | null
+    where?: TranslationWhereInput
+    orderBy?: TranslationOrderByWithRelationInput | TranslationOrderByWithRelationInput[]
+    cursor?: TranslationWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: AppointmentScalarFieldEnum | AppointmentScalarFieldEnum[]
+    distinct?: TranslationScalarFieldEnum | TranslationScalarFieldEnum[]
   }
 
   /**
@@ -2227,387 +2222,384 @@ export namespace Prisma {
 
 
   /**
-   * Model Appointment
+   * Model Translation
    */
 
-  export type AggregateAppointment = {
-    _count: AppointmentCountAggregateOutputType | null
-    _avg: AppointmentAvgAggregateOutputType | null
-    _sum: AppointmentSumAggregateOutputType | null
-    _min: AppointmentMinAggregateOutputType | null
-    _max: AppointmentMaxAggregateOutputType | null
+  export type AggregateTranslation = {
+    _count: TranslationCountAggregateOutputType | null
+    _avg: TranslationAvgAggregateOutputType | null
+    _sum: TranslationSumAggregateOutputType | null
+    _min: TranslationMinAggregateOutputType | null
+    _max: TranslationMaxAggregateOutputType | null
   }
 
-  export type AppointmentAvgAggregateOutputType = {
+  export type TranslationAvgAggregateOutputType = {
     id: number | null
     userId: number | null
-    timeBlockId: number | null
   }
 
-  export type AppointmentSumAggregateOutputType = {
+  export type TranslationSumAggregateOutputType = {
     id: number | null
     userId: number | null
-    timeBlockId: number | null
   }
 
-  export type AppointmentMinAggregateOutputType = {
+  export type TranslationMinAggregateOutputType = {
     id: number | null
-    date: Date | null
     userId: number | null
-    timeBlockId: number | null
+    videoPath: string | null
+    createdAt: Date | null
   }
 
-  export type AppointmentMaxAggregateOutputType = {
+  export type TranslationMaxAggregateOutputType = {
     id: number | null
-    date: Date | null
     userId: number | null
-    timeBlockId: number | null
+    videoPath: string | null
+    createdAt: Date | null
   }
 
-  export type AppointmentCountAggregateOutputType = {
+  export type TranslationCountAggregateOutputType = {
     id: number
-    date: number
     userId: number
-    timeBlockId: number
+    videoPath: number
+    result: number
+    createdAt: number
     _all: number
   }
 
 
-  export type AppointmentAvgAggregateInputType = {
+  export type TranslationAvgAggregateInputType = {
     id?: true
     userId?: true
-    timeBlockId?: true
   }
 
-  export type AppointmentSumAggregateInputType = {
+  export type TranslationSumAggregateInputType = {
     id?: true
     userId?: true
-    timeBlockId?: true
   }
 
-  export type AppointmentMinAggregateInputType = {
+  export type TranslationMinAggregateInputType = {
     id?: true
-    date?: true
     userId?: true
-    timeBlockId?: true
+    videoPath?: true
+    createdAt?: true
   }
 
-  export type AppointmentMaxAggregateInputType = {
+  export type TranslationMaxAggregateInputType = {
     id?: true
-    date?: true
     userId?: true
-    timeBlockId?: true
+    videoPath?: true
+    createdAt?: true
   }
 
-  export type AppointmentCountAggregateInputType = {
+  export type TranslationCountAggregateInputType = {
     id?: true
-    date?: true
     userId?: true
-    timeBlockId?: true
+    videoPath?: true
+    result?: true
+    createdAt?: true
     _all?: true
   }
 
-  export type AppointmentAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Appointment to aggregate.
+     * Filter which Translation to aggregate.
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appointments to fetch.
+     * Determine the order of Translations to fetch.
      */
-    orderBy?: AppointmentOrderByWithRelationInput | AppointmentOrderByWithRelationInput[]
+    orderBy?: TranslationOrderByWithRelationInput | TranslationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: AppointmentWhereUniqueInput
+    cursor?: TranslationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appointments from the position of the cursor.
+     * Take `±n` Translations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appointments.
+     * Skip the first `n` Translations.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Appointments
+     * Count returned Translations
     **/
-    _count?: true | AppointmentCountAggregateInputType
+    _count?: true | TranslationCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: AppointmentAvgAggregateInputType
+    _avg?: TranslationAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: AppointmentSumAggregateInputType
+    _sum?: TranslationSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: AppointmentMinAggregateInputType
+    _min?: TranslationMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: AppointmentMaxAggregateInputType
+    _max?: TranslationMaxAggregateInputType
   }
 
-  export type GetAppointmentAggregateType<T extends AppointmentAggregateArgs> = {
-        [P in keyof T & keyof AggregateAppointment]: P extends '_count' | 'count'
+  export type GetTranslationAggregateType<T extends TranslationAggregateArgs> = {
+        [P in keyof T & keyof AggregateTranslation]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateAppointment[P]>
-      : GetScalarType<T[P], AggregateAppointment[P]>
+        : GetScalarType<T[P], AggregateTranslation[P]>
+      : GetScalarType<T[P], AggregateTranslation[P]>
   }
 
 
 
 
-  export type AppointmentGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: AppointmentWhereInput
-    orderBy?: AppointmentOrderByWithAggregationInput | AppointmentOrderByWithAggregationInput[]
-    by: AppointmentScalarFieldEnum[] | AppointmentScalarFieldEnum
-    having?: AppointmentScalarWhereWithAggregatesInput
+  export type TranslationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TranslationWhereInput
+    orderBy?: TranslationOrderByWithAggregationInput | TranslationOrderByWithAggregationInput[]
+    by: TranslationScalarFieldEnum[] | TranslationScalarFieldEnum
+    having?: TranslationScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: AppointmentCountAggregateInputType | true
-    _avg?: AppointmentAvgAggregateInputType
-    _sum?: AppointmentSumAggregateInputType
-    _min?: AppointmentMinAggregateInputType
-    _max?: AppointmentMaxAggregateInputType
+    _count?: TranslationCountAggregateInputType | true
+    _avg?: TranslationAvgAggregateInputType
+    _sum?: TranslationSumAggregateInputType
+    _min?: TranslationMinAggregateInputType
+    _max?: TranslationMaxAggregateInputType
   }
 
-  export type AppointmentGroupByOutputType = {
+  export type TranslationGroupByOutputType = {
     id: number
-    date: Date
     userId: number
-    timeBlockId: number
-    _count: AppointmentCountAggregateOutputType | null
-    _avg: AppointmentAvgAggregateOutputType | null
-    _sum: AppointmentSumAggregateOutputType | null
-    _min: AppointmentMinAggregateOutputType | null
-    _max: AppointmentMaxAggregateOutputType | null
+    videoPath: string
+    result: JsonValue
+    createdAt: Date
+    _count: TranslationCountAggregateOutputType | null
+    _avg: TranslationAvgAggregateOutputType | null
+    _sum: TranslationSumAggregateOutputType | null
+    _min: TranslationMinAggregateOutputType | null
+    _max: TranslationMaxAggregateOutputType | null
   }
 
-  type GetAppointmentGroupByPayload<T extends AppointmentGroupByArgs> = Prisma.PrismaPromise<
+  type GetTranslationGroupByPayload<T extends TranslationGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<AppointmentGroupByOutputType, T['by']> &
+      PickEnumerable<TranslationGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof AppointmentGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof TranslationGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], AppointmentGroupByOutputType[P]>
-            : GetScalarType<T[P], AppointmentGroupByOutputType[P]>
+              : GetScalarType<T[P], TranslationGroupByOutputType[P]>
+            : GetScalarType<T[P], TranslationGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type AppointmentSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TranslationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    date?: boolean
     userId?: boolean
-    timeBlockId?: boolean
+    videoPath?: boolean
+    result?: boolean
+    createdAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
-    timeBlock?: boolean | TimeBlockDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["appointment"]>
+  }, ExtArgs["result"]["translation"]>
 
-  export type AppointmentSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TranslationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    date?: boolean
     userId?: boolean
-    timeBlockId?: boolean
+    videoPath?: boolean
+    result?: boolean
+    createdAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
-    timeBlock?: boolean | TimeBlockDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["appointment"]>
+  }, ExtArgs["result"]["translation"]>
 
-  export type AppointmentSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TranslationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    date?: boolean
     userId?: boolean
-    timeBlockId?: boolean
+    videoPath?: boolean
+    result?: boolean
+    createdAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
-    timeBlock?: boolean | TimeBlockDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["appointment"]>
+  }, ExtArgs["result"]["translation"]>
 
-  export type AppointmentSelectScalar = {
+  export type TranslationSelectScalar = {
     id?: boolean
-    date?: boolean
     userId?: boolean
-    timeBlockId?: boolean
+    videoPath?: boolean
+    result?: boolean
+    createdAt?: boolean
   }
 
-  export type AppointmentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "userId" | "timeBlockId", ExtArgs["result"]["appointment"]>
-  export type AppointmentInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "videoPath" | "result" | "createdAt", ExtArgs["result"]["translation"]>
+  export type TranslationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
-    timeBlock?: boolean | TimeBlockDefaultArgs<ExtArgs>
   }
-  export type AppointmentIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
-    timeBlock?: boolean | TimeBlockDefaultArgs<ExtArgs>
   }
-  export type AppointmentIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
-    timeBlock?: boolean | TimeBlockDefaultArgs<ExtArgs>
   }
 
-  export type $AppointmentPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Appointment"
+  export type $TranslationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Translation"
     objects: {
       user: Prisma.$UserPayload<ExtArgs>
-      timeBlock: Prisma.$TimeBlockPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      date: Date
       userId: number
-      timeBlockId: number
-    }, ExtArgs["result"]["appointment"]>
+      videoPath: string
+      result: Prisma.JsonValue
+      createdAt: Date
+    }, ExtArgs["result"]["translation"]>
     composites: {}
   }
 
-  type AppointmentGetPayload<S extends boolean | null | undefined | AppointmentDefaultArgs> = $Result.GetResult<Prisma.$AppointmentPayload, S>
+  type TranslationGetPayload<S extends boolean | null | undefined | TranslationDefaultArgs> = $Result.GetResult<Prisma.$TranslationPayload, S>
 
-  type AppointmentCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<AppointmentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: AppointmentCountAggregateInputType | true
+  type TranslationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TranslationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TranslationCountAggregateInputType | true
     }
 
-  export interface AppointmentDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Appointment'], meta: { name: 'Appointment' } }
+  export interface TranslationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Translation'], meta: { name: 'Translation' } }
     /**
-     * Find zero or one Appointment that matches the filter.
-     * @param {AppointmentFindUniqueArgs} args - Arguments to find a Appointment
+     * Find zero or one Translation that matches the filter.
+     * @param {TranslationFindUniqueArgs} args - Arguments to find a Translation
      * @example
-     * // Get one Appointment
-     * const appointment = await prisma.appointment.findUnique({
+     * // Get one Translation
+     * const translation = await prisma.translation.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends AppointmentFindUniqueArgs>(args: SelectSubset<T, AppointmentFindUniqueArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends TranslationFindUniqueArgs>(args: SelectSubset<T, TranslationFindUniqueArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Appointment that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Translation that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {AppointmentFindUniqueOrThrowArgs} args - Arguments to find a Appointment
+     * @param {TranslationFindUniqueOrThrowArgs} args - Arguments to find a Translation
      * @example
-     * // Get one Appointment
-     * const appointment = await prisma.appointment.findUniqueOrThrow({
+     * // Get one Translation
+     * const translation = await prisma.translation.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends AppointmentFindUniqueOrThrowArgs>(args: SelectSubset<T, AppointmentFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends TranslationFindUniqueOrThrowArgs>(args: SelectSubset<T, TranslationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Appointment that matches the filter.
+     * Find the first Translation that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentFindFirstArgs} args - Arguments to find a Appointment
+     * @param {TranslationFindFirstArgs} args - Arguments to find a Translation
      * @example
-     * // Get one Appointment
-     * const appointment = await prisma.appointment.findFirst({
+     * // Get one Translation
+     * const translation = await prisma.translation.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends AppointmentFindFirstArgs>(args?: SelectSubset<T, AppointmentFindFirstArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends TranslationFindFirstArgs>(args?: SelectSubset<T, TranslationFindFirstArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Appointment that matches the filter or
+     * Find the first Translation that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentFindFirstOrThrowArgs} args - Arguments to find a Appointment
+     * @param {TranslationFindFirstOrThrowArgs} args - Arguments to find a Translation
      * @example
-     * // Get one Appointment
-     * const appointment = await prisma.appointment.findFirstOrThrow({
+     * // Get one Translation
+     * const translation = await prisma.translation.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends AppointmentFindFirstOrThrowArgs>(args?: SelectSubset<T, AppointmentFindFirstOrThrowArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends TranslationFindFirstOrThrowArgs>(args?: SelectSubset<T, TranslationFindFirstOrThrowArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Appointments that matches the filter.
+     * Find zero or more Translations that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {TranslationFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Appointments
-     * const appointments = await prisma.appointment.findMany()
+     * // Get all Translations
+     * const translations = await prisma.translation.findMany()
      * 
-     * // Get first 10 Appointments
-     * const appointments = await prisma.appointment.findMany({ take: 10 })
+     * // Get first 10 Translations
+     * const translations = await prisma.translation.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const appointmentWithIdOnly = await prisma.appointment.findMany({ select: { id: true } })
+     * const translationWithIdOnly = await prisma.translation.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends AppointmentFindManyArgs>(args?: SelectSubset<T, AppointmentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends TranslationFindManyArgs>(args?: SelectSubset<T, TranslationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Appointment.
-     * @param {AppointmentCreateArgs} args - Arguments to create a Appointment.
+     * Create a Translation.
+     * @param {TranslationCreateArgs} args - Arguments to create a Translation.
      * @example
-     * // Create one Appointment
-     * const Appointment = await prisma.appointment.create({
+     * // Create one Translation
+     * const Translation = await prisma.translation.create({
      *   data: {
-     *     // ... data to create a Appointment
+     *     // ... data to create a Translation
      *   }
      * })
      * 
      */
-    create<T extends AppointmentCreateArgs>(args: SelectSubset<T, AppointmentCreateArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends TranslationCreateArgs>(args: SelectSubset<T, TranslationCreateArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Appointments.
-     * @param {AppointmentCreateManyArgs} args - Arguments to create many Appointments.
+     * Create many Translations.
+     * @param {TranslationCreateManyArgs} args - Arguments to create many Translations.
      * @example
-     * // Create many Appointments
-     * const appointment = await prisma.appointment.createMany({
+     * // Create many Translations
+     * const translation = await prisma.translation.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends AppointmentCreateManyArgs>(args?: SelectSubset<T, AppointmentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends TranslationCreateManyArgs>(args?: SelectSubset<T, TranslationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Appointments and returns the data saved in the database.
-     * @param {AppointmentCreateManyAndReturnArgs} args - Arguments to create many Appointments.
+     * Create many Translations and returns the data saved in the database.
+     * @param {TranslationCreateManyAndReturnArgs} args - Arguments to create many Translations.
      * @example
-     * // Create many Appointments
-     * const appointment = await prisma.appointment.createManyAndReturn({
+     * // Create many Translations
+     * const translation = await prisma.translation.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Appointments and only return the `id`
-     * const appointmentWithIdOnly = await prisma.appointment.createManyAndReturn({
+     * // Create many Translations and only return the `id`
+     * const translationWithIdOnly = await prisma.translation.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2617,28 +2609,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends AppointmentCreateManyAndReturnArgs>(args?: SelectSubset<T, AppointmentCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends TranslationCreateManyAndReturnArgs>(args?: SelectSubset<T, TranslationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Appointment.
-     * @param {AppointmentDeleteArgs} args - Arguments to delete one Appointment.
+     * Delete a Translation.
+     * @param {TranslationDeleteArgs} args - Arguments to delete one Translation.
      * @example
-     * // Delete one Appointment
-     * const Appointment = await prisma.appointment.delete({
+     * // Delete one Translation
+     * const Translation = await prisma.translation.delete({
      *   where: {
-     *     // ... filter to delete one Appointment
+     *     // ... filter to delete one Translation
      *   }
      * })
      * 
      */
-    delete<T extends AppointmentDeleteArgs>(args: SelectSubset<T, AppointmentDeleteArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends TranslationDeleteArgs>(args: SelectSubset<T, TranslationDeleteArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Appointment.
-     * @param {AppointmentUpdateArgs} args - Arguments to update one Appointment.
+     * Update one Translation.
+     * @param {TranslationUpdateArgs} args - Arguments to update one Translation.
      * @example
-     * // Update one Appointment
-     * const appointment = await prisma.appointment.update({
+     * // Update one Translation
+     * const translation = await prisma.translation.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2648,30 +2640,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends AppointmentUpdateArgs>(args: SelectSubset<T, AppointmentUpdateArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends TranslationUpdateArgs>(args: SelectSubset<T, TranslationUpdateArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Appointments.
-     * @param {AppointmentDeleteManyArgs} args - Arguments to filter Appointments to delete.
+     * Delete zero or more Translations.
+     * @param {TranslationDeleteManyArgs} args - Arguments to filter Translations to delete.
      * @example
-     * // Delete a few Appointments
-     * const { count } = await prisma.appointment.deleteMany({
+     * // Delete a few Translations
+     * const { count } = await prisma.translation.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends AppointmentDeleteManyArgs>(args?: SelectSubset<T, AppointmentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends TranslationDeleteManyArgs>(args?: SelectSubset<T, TranslationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Appointments.
+     * Update zero or more Translations.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {TranslationUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Appointments
-     * const appointment = await prisma.appointment.updateMany({
+     * // Update many Translations
+     * const translation = await prisma.translation.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2681,14 +2673,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends AppointmentUpdateManyArgs>(args: SelectSubset<T, AppointmentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends TranslationUpdateManyArgs>(args: SelectSubset<T, TranslationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Appointments and returns the data updated in the database.
-     * @param {AppointmentUpdateManyAndReturnArgs} args - Arguments to update many Appointments.
+     * Update zero or more Translations and returns the data updated in the database.
+     * @param {TranslationUpdateManyAndReturnArgs} args - Arguments to update many Translations.
      * @example
-     * // Update many Appointments
-     * const appointment = await prisma.appointment.updateManyAndReturn({
+     * // Update many Translations
+     * const translation = await prisma.translation.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2697,8 +2689,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Appointments and only return the `id`
-     * const appointmentWithIdOnly = await prisma.appointment.updateManyAndReturn({
+     * // Update zero or more Translations and only return the `id`
+     * const translationWithIdOnly = await prisma.translation.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2711,56 +2703,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends AppointmentUpdateManyAndReturnArgs>(args: SelectSubset<T, AppointmentUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends TranslationUpdateManyAndReturnArgs>(args: SelectSubset<T, TranslationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Appointment.
-     * @param {AppointmentUpsertArgs} args - Arguments to update or create a Appointment.
+     * Create or update one Translation.
+     * @param {TranslationUpsertArgs} args - Arguments to update or create a Translation.
      * @example
-     * // Update or create a Appointment
-     * const appointment = await prisma.appointment.upsert({
+     * // Update or create a Translation
+     * const translation = await prisma.translation.upsert({
      *   create: {
-     *     // ... data to create a Appointment
+     *     // ... data to create a Translation
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Appointment we want to update
+     *     // ... the filter for the Translation we want to update
      *   }
      * })
      */
-    upsert<T extends AppointmentUpsertArgs>(args: SelectSubset<T, AppointmentUpsertArgs<ExtArgs>>): Prisma__AppointmentClient<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends TranslationUpsertArgs>(args: SelectSubset<T, TranslationUpsertArgs<ExtArgs>>): Prisma__TranslationClient<$Result.GetResult<Prisma.$TranslationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Appointments.
+     * Count the number of Translations.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentCountArgs} args - Arguments to filter Appointments to count.
+     * @param {TranslationCountArgs} args - Arguments to filter Translations to count.
      * @example
-     * // Count the number of Appointments
-     * const count = await prisma.appointment.count({
+     * // Count the number of Translations
+     * const count = await prisma.translation.count({
      *   where: {
-     *     // ... the filter for the Appointments we want to count
+     *     // ... the filter for the Translations we want to count
      *   }
      * })
     **/
-    count<T extends AppointmentCountArgs>(
-      args?: Subset<T, AppointmentCountArgs>,
+    count<T extends TranslationCountArgs>(
+      args?: Subset<T, TranslationCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], AppointmentCountAggregateOutputType>
+          : GetScalarType<T['select'], TranslationCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Appointment.
+     * Allows you to perform aggregations operations on a Translation.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {TranslationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2780,13 +2772,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends AppointmentAggregateArgs>(args: Subset<T, AppointmentAggregateArgs>): Prisma.PrismaPromise<GetAppointmentAggregateType<T>>
+    aggregate<T extends TranslationAggregateArgs>(args: Subset<T, TranslationAggregateArgs>): Prisma.PrismaPromise<GetTranslationAggregateType<T>>
 
     /**
-     * Group by Appointment.
+     * Group by Translation.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppointmentGroupByArgs} args - Group by arguments.
+     * @param {TranslationGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2801,14 +2793,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends AppointmentGroupByArgs,
+      T extends TranslationGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: AppointmentGroupByArgs['orderBy'] }
-        : { orderBy?: AppointmentGroupByArgs['orderBy'] },
+        ? { orderBy: TranslationGroupByArgs['orderBy'] }
+        : { orderBy?: TranslationGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2857,23 +2849,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, AppointmentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAppointmentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, TranslationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTranslationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Appointment model
+   * Fields of the Translation model
    */
-  readonly fields: AppointmentFieldRefs;
+  readonly fields: TranslationFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Appointment.
+   * The delegate class that acts as a "Promise-like" for Translation.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__AppointmentClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__TranslationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    timeBlock<T extends TimeBlockDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TimeBlockDefaultArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2900,778 +2891,769 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Appointment model
+   * Fields of the Translation model
    */
-  interface AppointmentFieldRefs {
-    readonly id: FieldRef<"Appointment", 'Int'>
-    readonly date: FieldRef<"Appointment", 'DateTime'>
-    readonly userId: FieldRef<"Appointment", 'Int'>
-    readonly timeBlockId: FieldRef<"Appointment", 'Int'>
+  interface TranslationFieldRefs {
+    readonly id: FieldRef<"Translation", 'Int'>
+    readonly userId: FieldRef<"Translation", 'Int'>
+    readonly videoPath: FieldRef<"Translation", 'String'>
+    readonly result: FieldRef<"Translation", 'Json'>
+    readonly createdAt: FieldRef<"Translation", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Appointment findUnique
+   * Translation findUnique
    */
-  export type AppointmentFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * Filter, which Appointment to fetch.
+     * Filter, which Translation to fetch.
      */
-    where: AppointmentWhereUniqueInput
+    where: TranslationWhereUniqueInput
   }
 
   /**
-   * Appointment findUniqueOrThrow
+   * Translation findUniqueOrThrow
    */
-  export type AppointmentFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * Filter, which Appointment to fetch.
+     * Filter, which Translation to fetch.
      */
-    where: AppointmentWhereUniqueInput
+    where: TranslationWhereUniqueInput
   }
 
   /**
-   * Appointment findFirst
+   * Translation findFirst
    */
-  export type AppointmentFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * Filter, which Appointment to fetch.
+     * Filter, which Translation to fetch.
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appointments to fetch.
+     * Determine the order of Translations to fetch.
      */
-    orderBy?: AppointmentOrderByWithRelationInput | AppointmentOrderByWithRelationInput[]
+    orderBy?: TranslationOrderByWithRelationInput | TranslationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Appointments.
+     * Sets the position for searching for Translations.
      */
-    cursor?: AppointmentWhereUniqueInput
+    cursor?: TranslationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appointments from the position of the cursor.
+     * Take `±n` Translations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appointments.
+     * Skip the first `n` Translations.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Appointments.
+     * Filter by unique combinations of Translations.
      */
-    distinct?: AppointmentScalarFieldEnum | AppointmentScalarFieldEnum[]
+    distinct?: TranslationScalarFieldEnum | TranslationScalarFieldEnum[]
   }
 
   /**
-   * Appointment findFirstOrThrow
+   * Translation findFirstOrThrow
    */
-  export type AppointmentFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * Filter, which Appointment to fetch.
+     * Filter, which Translation to fetch.
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appointments to fetch.
+     * Determine the order of Translations to fetch.
      */
-    orderBy?: AppointmentOrderByWithRelationInput | AppointmentOrderByWithRelationInput[]
+    orderBy?: TranslationOrderByWithRelationInput | TranslationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Appointments.
+     * Sets the position for searching for Translations.
      */
-    cursor?: AppointmentWhereUniqueInput
+    cursor?: TranslationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appointments from the position of the cursor.
+     * Take `±n` Translations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appointments.
+     * Skip the first `n` Translations.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Appointments.
+     * Filter by unique combinations of Translations.
      */
-    distinct?: AppointmentScalarFieldEnum | AppointmentScalarFieldEnum[]
+    distinct?: TranslationScalarFieldEnum | TranslationScalarFieldEnum[]
   }
 
   /**
-   * Appointment findMany
+   * Translation findMany
    */
-  export type AppointmentFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * Filter, which Appointments to fetch.
+     * Filter, which Translations to fetch.
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appointments to fetch.
+     * Determine the order of Translations to fetch.
      */
-    orderBy?: AppointmentOrderByWithRelationInput | AppointmentOrderByWithRelationInput[]
+    orderBy?: TranslationOrderByWithRelationInput | TranslationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Appointments.
+     * Sets the position for listing Translations.
      */
-    cursor?: AppointmentWhereUniqueInput
+    cursor?: TranslationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appointments from the position of the cursor.
+     * Take `±n` Translations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appointments.
+     * Skip the first `n` Translations.
      */
     skip?: number
-    distinct?: AppointmentScalarFieldEnum | AppointmentScalarFieldEnum[]
+    distinct?: TranslationScalarFieldEnum | TranslationScalarFieldEnum[]
   }
 
   /**
-   * Appointment create
+   * Translation create
    */
-  export type AppointmentCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * The data needed to create a Appointment.
+     * The data needed to create a Translation.
      */
-    data: XOR<AppointmentCreateInput, AppointmentUncheckedCreateInput>
+    data: XOR<TranslationCreateInput, TranslationUncheckedCreateInput>
   }
 
   /**
-   * Appointment createMany
+   * Translation createMany
    */
-  export type AppointmentCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Appointments.
+     * The data used to create many Translations.
      */
-    data: AppointmentCreateManyInput | AppointmentCreateManyInput[]
+    data: TranslationCreateManyInput | TranslationCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Appointment createManyAndReturn
+   * Translation createManyAndReturn
    */
-  export type AppointmentCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelectCreateManyAndReturn<ExtArgs> | null
+    select?: TranslationSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
-     * The data used to create many Appointments.
+     * The data used to create many Translations.
      */
-    data: AppointmentCreateManyInput | AppointmentCreateManyInput[]
+    data: TranslationCreateManyInput | TranslationCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: TranslationIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Appointment update
+   * Translation update
    */
-  export type AppointmentUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * The data needed to update a Appointment.
+     * The data needed to update a Translation.
      */
-    data: XOR<AppointmentUpdateInput, AppointmentUncheckedUpdateInput>
+    data: XOR<TranslationUpdateInput, TranslationUncheckedUpdateInput>
     /**
-     * Choose, which Appointment to update.
+     * Choose, which Translation to update.
      */
-    where: AppointmentWhereUniqueInput
+    where: TranslationWhereUniqueInput
   }
 
   /**
-   * Appointment updateMany
+   * Translation updateMany
    */
-  export type AppointmentUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Appointments.
+     * The data used to update Translations.
      */
-    data: XOR<AppointmentUpdateManyMutationInput, AppointmentUncheckedUpdateManyInput>
+    data: XOR<TranslationUpdateManyMutationInput, TranslationUncheckedUpdateManyInput>
     /**
-     * Filter which Appointments to update
+     * Filter which Translations to update
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
-     * Limit how many Appointments to update.
+     * Limit how many Translations to update.
      */
     limit?: number
   }
 
   /**
-   * Appointment updateManyAndReturn
+   * Translation updateManyAndReturn
    */
-  export type AppointmentUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: TranslationSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
-     * The data used to update Appointments.
+     * The data used to update Translations.
      */
-    data: XOR<AppointmentUpdateManyMutationInput, AppointmentUncheckedUpdateManyInput>
+    data: XOR<TranslationUpdateManyMutationInput, TranslationUncheckedUpdateManyInput>
     /**
-     * Filter which Appointments to update
+     * Filter which Translations to update
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
-     * Limit how many Appointments to update.
+     * Limit how many Translations to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: TranslationIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Appointment upsert
+   * Translation upsert
    */
-  export type AppointmentUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * The filter to search for the Appointment to update in case it exists.
+     * The filter to search for the Translation to update in case it exists.
      */
-    where: AppointmentWhereUniqueInput
+    where: TranslationWhereUniqueInput
     /**
-     * In case the Appointment found by the `where` argument doesn't exist, create a new Appointment with this data.
+     * In case the Translation found by the `where` argument doesn't exist, create a new Translation with this data.
      */
-    create: XOR<AppointmentCreateInput, AppointmentUncheckedCreateInput>
+    create: XOR<TranslationCreateInput, TranslationUncheckedCreateInput>
     /**
-     * In case the Appointment was found with the provided `where` argument, update it with this data.
+     * In case the Translation was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<AppointmentUpdateInput, AppointmentUncheckedUpdateInput>
+    update: XOR<TranslationUpdateInput, TranslationUncheckedUpdateInput>
   }
 
   /**
-   * Appointment delete
+   * Translation delete
    */
-  export type AppointmentDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
     /**
-     * Filter which Appointment to delete.
+     * Filter which Translation to delete.
      */
-    where: AppointmentWhereUniqueInput
+    where: TranslationWhereUniqueInput
   }
 
   /**
-   * Appointment deleteMany
+   * Translation deleteMany
    */
-  export type AppointmentDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Appointments to delete
+     * Filter which Translations to delete
      */
-    where?: AppointmentWhereInput
+    where?: TranslationWhereInput
     /**
-     * Limit how many Appointments to delete.
+     * Limit how many Translations to delete.
      */
     limit?: number
   }
 
   /**
-   * Appointment without action
+   * Translation without action
    */
-  export type AppointmentDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TranslationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Translation
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: TranslationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Translation
      */
-    omit?: AppointmentOmit<ExtArgs> | null
+    omit?: TranslationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AppointmentInclude<ExtArgs> | null
+    include?: TranslationInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model TimeBlock
+   * Model Gif
    */
 
-  export type AggregateTimeBlock = {
-    _count: TimeBlockCountAggregateOutputType | null
-    _avg: TimeBlockAvgAggregateOutputType | null
-    _sum: TimeBlockSumAggregateOutputType | null
-    _min: TimeBlockMinAggregateOutputType | null
-    _max: TimeBlockMaxAggregateOutputType | null
+  export type AggregateGif = {
+    _count: GifCountAggregateOutputType | null
+    _avg: GifAvgAggregateOutputType | null
+    _sum: GifSumAggregateOutputType | null
+    _min: GifMinAggregateOutputType | null
+    _max: GifMaxAggregateOutputType | null
   }
 
-  export type TimeBlockAvgAggregateOutputType = {
+  export type GifAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type TimeBlockSumAggregateOutputType = {
+  export type GifSumAggregateOutputType = {
     id: number | null
   }
 
-  export type TimeBlockMinAggregateOutputType = {
+  export type GifMinAggregateOutputType = {
     id: number | null
-    startTime: Date | null
-    endTime: Date | null
+    word: string | null
+    gifUrl: string | null
   }
 
-  export type TimeBlockMaxAggregateOutputType = {
+  export type GifMaxAggregateOutputType = {
     id: number | null
-    startTime: Date | null
-    endTime: Date | null
+    word: string | null
+    gifUrl: string | null
   }
 
-  export type TimeBlockCountAggregateOutputType = {
+  export type GifCountAggregateOutputType = {
     id: number
-    startTime: number
-    endTime: number
+    word: number
+    gifUrl: number
     _all: number
   }
 
 
-  export type TimeBlockAvgAggregateInputType = {
+  export type GifAvgAggregateInputType = {
     id?: true
   }
 
-  export type TimeBlockSumAggregateInputType = {
+  export type GifSumAggregateInputType = {
     id?: true
   }
 
-  export type TimeBlockMinAggregateInputType = {
+  export type GifMinAggregateInputType = {
     id?: true
-    startTime?: true
-    endTime?: true
+    word?: true
+    gifUrl?: true
   }
 
-  export type TimeBlockMaxAggregateInputType = {
+  export type GifMaxAggregateInputType = {
     id?: true
-    startTime?: true
-    endTime?: true
+    word?: true
+    gifUrl?: true
   }
 
-  export type TimeBlockCountAggregateInputType = {
+  export type GifCountAggregateInputType = {
     id?: true
-    startTime?: true
-    endTime?: true
+    word?: true
+    gifUrl?: true
     _all?: true
   }
 
-  export type TimeBlockAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which TimeBlock to aggregate.
+     * Filter which Gif to aggregate.
      */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of TimeBlocks to fetch.
+     * Determine the order of Gifs to fetch.
      */
-    orderBy?: TimeBlockOrderByWithRelationInput | TimeBlockOrderByWithRelationInput[]
+    orderBy?: GifOrderByWithRelationInput | GifOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: TimeBlockWhereUniqueInput
+    cursor?: GifWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` TimeBlocks from the position of the cursor.
+     * Take `±n` Gifs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` TimeBlocks.
+     * Skip the first `n` Gifs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned TimeBlocks
+     * Count returned Gifs
     **/
-    _count?: true | TimeBlockCountAggregateInputType
+    _count?: true | GifCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: TimeBlockAvgAggregateInputType
+    _avg?: GifAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: TimeBlockSumAggregateInputType
+    _sum?: GifSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: TimeBlockMinAggregateInputType
+    _min?: GifMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: TimeBlockMaxAggregateInputType
+    _max?: GifMaxAggregateInputType
   }
 
-  export type GetTimeBlockAggregateType<T extends TimeBlockAggregateArgs> = {
-        [P in keyof T & keyof AggregateTimeBlock]: P extends '_count' | 'count'
+  export type GetGifAggregateType<T extends GifAggregateArgs> = {
+        [P in keyof T & keyof AggregateGif]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTimeBlock[P]>
-      : GetScalarType<T[P], AggregateTimeBlock[P]>
+        : GetScalarType<T[P], AggregateGif[P]>
+      : GetScalarType<T[P], AggregateGif[P]>
   }
 
 
 
 
-  export type TimeBlockGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TimeBlockWhereInput
-    orderBy?: TimeBlockOrderByWithAggregationInput | TimeBlockOrderByWithAggregationInput[]
-    by: TimeBlockScalarFieldEnum[] | TimeBlockScalarFieldEnum
-    having?: TimeBlockScalarWhereWithAggregatesInput
+  export type GifGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GifWhereInput
+    orderBy?: GifOrderByWithAggregationInput | GifOrderByWithAggregationInput[]
+    by: GifScalarFieldEnum[] | GifScalarFieldEnum
+    having?: GifScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: TimeBlockCountAggregateInputType | true
-    _avg?: TimeBlockAvgAggregateInputType
-    _sum?: TimeBlockSumAggregateInputType
-    _min?: TimeBlockMinAggregateInputType
-    _max?: TimeBlockMaxAggregateInputType
+    _count?: GifCountAggregateInputType | true
+    _avg?: GifAvgAggregateInputType
+    _sum?: GifSumAggregateInputType
+    _min?: GifMinAggregateInputType
+    _max?: GifMaxAggregateInputType
   }
 
-  export type TimeBlockGroupByOutputType = {
+  export type GifGroupByOutputType = {
     id: number
-    startTime: Date
-    endTime: Date
-    _count: TimeBlockCountAggregateOutputType | null
-    _avg: TimeBlockAvgAggregateOutputType | null
-    _sum: TimeBlockSumAggregateOutputType | null
-    _min: TimeBlockMinAggregateOutputType | null
-    _max: TimeBlockMaxAggregateOutputType | null
+    word: string
+    gifUrl: string
+    _count: GifCountAggregateOutputType | null
+    _avg: GifAvgAggregateOutputType | null
+    _sum: GifSumAggregateOutputType | null
+    _min: GifMinAggregateOutputType | null
+    _max: GifMaxAggregateOutputType | null
   }
 
-  type GetTimeBlockGroupByPayload<T extends TimeBlockGroupByArgs> = Prisma.PrismaPromise<
+  type GetGifGroupByPayload<T extends GifGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<TimeBlockGroupByOutputType, T['by']> &
+      PickEnumerable<GifGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof TimeBlockGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof GifGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], TimeBlockGroupByOutputType[P]>
-            : GetScalarType<T[P], TimeBlockGroupByOutputType[P]>
+              : GetScalarType<T[P], GifGroupByOutputType[P]>
+            : GetScalarType<T[P], GifGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type TimeBlockSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type GifSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    startTime?: boolean
-    endTime?: boolean
-    appointments?: boolean | TimeBlock$appointmentsArgs<ExtArgs>
-    _count?: boolean | TimeBlockCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["timeBlock"]>
+    word?: boolean
+    gifUrl?: boolean
+  }, ExtArgs["result"]["gif"]>
 
-  export type TimeBlockSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type GifSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    startTime?: boolean
-    endTime?: boolean
-  }, ExtArgs["result"]["timeBlock"]>
+    word?: boolean
+    gifUrl?: boolean
+  }, ExtArgs["result"]["gif"]>
 
-  export type TimeBlockSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type GifSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    startTime?: boolean
-    endTime?: boolean
-  }, ExtArgs["result"]["timeBlock"]>
+    word?: boolean
+    gifUrl?: boolean
+  }, ExtArgs["result"]["gif"]>
 
-  export type TimeBlockSelectScalar = {
+  export type GifSelectScalar = {
     id?: boolean
-    startTime?: boolean
-    endTime?: boolean
+    word?: boolean
+    gifUrl?: boolean
   }
 
-  export type TimeBlockOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime", ExtArgs["result"]["timeBlock"]>
-  export type TimeBlockInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    appointments?: boolean | TimeBlock$appointmentsArgs<ExtArgs>
-    _count?: boolean | TimeBlockCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type TimeBlockIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type TimeBlockIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type GifOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "word" | "gifUrl", ExtArgs["result"]["gif"]>
 
-  export type $TimeBlockPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "TimeBlock"
-    objects: {
-      appointments: Prisma.$AppointmentPayload<ExtArgs>[]
-    }
+  export type $GifPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Gif"
+    objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      startTime: Date
-      endTime: Date
-    }, ExtArgs["result"]["timeBlock"]>
+      word: string
+      gifUrl: string
+    }, ExtArgs["result"]["gif"]>
     composites: {}
   }
 
-  type TimeBlockGetPayload<S extends boolean | null | undefined | TimeBlockDefaultArgs> = $Result.GetResult<Prisma.$TimeBlockPayload, S>
+  type GifGetPayload<S extends boolean | null | undefined | GifDefaultArgs> = $Result.GetResult<Prisma.$GifPayload, S>
 
-  type TimeBlockCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<TimeBlockFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: TimeBlockCountAggregateInputType | true
+  type GifCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GifFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GifCountAggregateInputType | true
     }
 
-  export interface TimeBlockDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TimeBlock'], meta: { name: 'TimeBlock' } }
+  export interface GifDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Gif'], meta: { name: 'Gif' } }
     /**
-     * Find zero or one TimeBlock that matches the filter.
-     * @param {TimeBlockFindUniqueArgs} args - Arguments to find a TimeBlock
+     * Find zero or one Gif that matches the filter.
+     * @param {GifFindUniqueArgs} args - Arguments to find a Gif
      * @example
-     * // Get one TimeBlock
-     * const timeBlock = await prisma.timeBlock.findUnique({
+     * // Get one Gif
+     * const gif = await prisma.gif.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends TimeBlockFindUniqueArgs>(args: SelectSubset<T, TimeBlockFindUniqueArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends GifFindUniqueArgs>(args: SelectSubset<T, GifFindUniqueArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one TimeBlock that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Gif that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {TimeBlockFindUniqueOrThrowArgs} args - Arguments to find a TimeBlock
+     * @param {GifFindUniqueOrThrowArgs} args - Arguments to find a Gif
      * @example
-     * // Get one TimeBlock
-     * const timeBlock = await prisma.timeBlock.findUniqueOrThrow({
+     * // Get one Gif
+     * const gif = await prisma.gif.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends TimeBlockFindUniqueOrThrowArgs>(args: SelectSubset<T, TimeBlockFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends GifFindUniqueOrThrowArgs>(args: SelectSubset<T, GifFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first TimeBlock that matches the filter.
+     * Find the first Gif that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockFindFirstArgs} args - Arguments to find a TimeBlock
+     * @param {GifFindFirstArgs} args - Arguments to find a Gif
      * @example
-     * // Get one TimeBlock
-     * const timeBlock = await prisma.timeBlock.findFirst({
+     * // Get one Gif
+     * const gif = await prisma.gif.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends TimeBlockFindFirstArgs>(args?: SelectSubset<T, TimeBlockFindFirstArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends GifFindFirstArgs>(args?: SelectSubset<T, GifFindFirstArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first TimeBlock that matches the filter or
+     * Find the first Gif that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockFindFirstOrThrowArgs} args - Arguments to find a TimeBlock
+     * @param {GifFindFirstOrThrowArgs} args - Arguments to find a Gif
      * @example
-     * // Get one TimeBlock
-     * const timeBlock = await prisma.timeBlock.findFirstOrThrow({
+     * // Get one Gif
+     * const gif = await prisma.gif.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends TimeBlockFindFirstOrThrowArgs>(args?: SelectSubset<T, TimeBlockFindFirstOrThrowArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends GifFindFirstOrThrowArgs>(args?: SelectSubset<T, GifFindFirstOrThrowArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more TimeBlocks that matches the filter.
+     * Find zero or more Gifs that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {GifFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all TimeBlocks
-     * const timeBlocks = await prisma.timeBlock.findMany()
+     * // Get all Gifs
+     * const gifs = await prisma.gif.findMany()
      * 
-     * // Get first 10 TimeBlocks
-     * const timeBlocks = await prisma.timeBlock.findMany({ take: 10 })
+     * // Get first 10 Gifs
+     * const gifs = await prisma.gif.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const timeBlockWithIdOnly = await prisma.timeBlock.findMany({ select: { id: true } })
+     * const gifWithIdOnly = await prisma.gif.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends TimeBlockFindManyArgs>(args?: SelectSubset<T, TimeBlockFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends GifFindManyArgs>(args?: SelectSubset<T, GifFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a TimeBlock.
-     * @param {TimeBlockCreateArgs} args - Arguments to create a TimeBlock.
+     * Create a Gif.
+     * @param {GifCreateArgs} args - Arguments to create a Gif.
      * @example
-     * // Create one TimeBlock
-     * const TimeBlock = await prisma.timeBlock.create({
+     * // Create one Gif
+     * const Gif = await prisma.gif.create({
      *   data: {
-     *     // ... data to create a TimeBlock
+     *     // ... data to create a Gif
      *   }
      * })
      * 
      */
-    create<T extends TimeBlockCreateArgs>(args: SelectSubset<T, TimeBlockCreateArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends GifCreateArgs>(args: SelectSubset<T, GifCreateArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many TimeBlocks.
-     * @param {TimeBlockCreateManyArgs} args - Arguments to create many TimeBlocks.
+     * Create many Gifs.
+     * @param {GifCreateManyArgs} args - Arguments to create many Gifs.
      * @example
-     * // Create many TimeBlocks
-     * const timeBlock = await prisma.timeBlock.createMany({
+     * // Create many Gifs
+     * const gif = await prisma.gif.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends TimeBlockCreateManyArgs>(args?: SelectSubset<T, TimeBlockCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends GifCreateManyArgs>(args?: SelectSubset<T, GifCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many TimeBlocks and returns the data saved in the database.
-     * @param {TimeBlockCreateManyAndReturnArgs} args - Arguments to create many TimeBlocks.
+     * Create many Gifs and returns the data saved in the database.
+     * @param {GifCreateManyAndReturnArgs} args - Arguments to create many Gifs.
      * @example
-     * // Create many TimeBlocks
-     * const timeBlock = await prisma.timeBlock.createManyAndReturn({
+     * // Create many Gifs
+     * const gif = await prisma.gif.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many TimeBlocks and only return the `id`
-     * const timeBlockWithIdOnly = await prisma.timeBlock.createManyAndReturn({
+     * // Create many Gifs and only return the `id`
+     * const gifWithIdOnly = await prisma.gif.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3681,28 +3663,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends TimeBlockCreateManyAndReturnArgs>(args?: SelectSubset<T, TimeBlockCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends GifCreateManyAndReturnArgs>(args?: SelectSubset<T, GifCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a TimeBlock.
-     * @param {TimeBlockDeleteArgs} args - Arguments to delete one TimeBlock.
+     * Delete a Gif.
+     * @param {GifDeleteArgs} args - Arguments to delete one Gif.
      * @example
-     * // Delete one TimeBlock
-     * const TimeBlock = await prisma.timeBlock.delete({
+     * // Delete one Gif
+     * const Gif = await prisma.gif.delete({
      *   where: {
-     *     // ... filter to delete one TimeBlock
+     *     // ... filter to delete one Gif
      *   }
      * })
      * 
      */
-    delete<T extends TimeBlockDeleteArgs>(args: SelectSubset<T, TimeBlockDeleteArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends GifDeleteArgs>(args: SelectSubset<T, GifDeleteArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one TimeBlock.
-     * @param {TimeBlockUpdateArgs} args - Arguments to update one TimeBlock.
+     * Update one Gif.
+     * @param {GifUpdateArgs} args - Arguments to update one Gif.
      * @example
-     * // Update one TimeBlock
-     * const timeBlock = await prisma.timeBlock.update({
+     * // Update one Gif
+     * const gif = await prisma.gif.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3712,30 +3694,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends TimeBlockUpdateArgs>(args: SelectSubset<T, TimeBlockUpdateArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends GifUpdateArgs>(args: SelectSubset<T, GifUpdateArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more TimeBlocks.
-     * @param {TimeBlockDeleteManyArgs} args - Arguments to filter TimeBlocks to delete.
+     * Delete zero or more Gifs.
+     * @param {GifDeleteManyArgs} args - Arguments to filter Gifs to delete.
      * @example
-     * // Delete a few TimeBlocks
-     * const { count } = await prisma.timeBlock.deleteMany({
+     * // Delete a few Gifs
+     * const { count } = await prisma.gif.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends TimeBlockDeleteManyArgs>(args?: SelectSubset<T, TimeBlockDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends GifDeleteManyArgs>(args?: SelectSubset<T, GifDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more TimeBlocks.
+     * Update zero or more Gifs.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {GifUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many TimeBlocks
-     * const timeBlock = await prisma.timeBlock.updateMany({
+     * // Update many Gifs
+     * const gif = await prisma.gif.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3745,14 +3727,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends TimeBlockUpdateManyArgs>(args: SelectSubset<T, TimeBlockUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends GifUpdateManyArgs>(args: SelectSubset<T, GifUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more TimeBlocks and returns the data updated in the database.
-     * @param {TimeBlockUpdateManyAndReturnArgs} args - Arguments to update many TimeBlocks.
+     * Update zero or more Gifs and returns the data updated in the database.
+     * @param {GifUpdateManyAndReturnArgs} args - Arguments to update many Gifs.
      * @example
-     * // Update many TimeBlocks
-     * const timeBlock = await prisma.timeBlock.updateManyAndReturn({
+     * // Update many Gifs
+     * const gif = await prisma.gif.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3761,8 +3743,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more TimeBlocks and only return the `id`
-     * const timeBlockWithIdOnly = await prisma.timeBlock.updateManyAndReturn({
+     * // Update zero or more Gifs and only return the `id`
+     * const gifWithIdOnly = await prisma.gif.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -3775,56 +3757,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends TimeBlockUpdateManyAndReturnArgs>(args: SelectSubset<T, TimeBlockUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends GifUpdateManyAndReturnArgs>(args: SelectSubset<T, GifUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one TimeBlock.
-     * @param {TimeBlockUpsertArgs} args - Arguments to update or create a TimeBlock.
+     * Create or update one Gif.
+     * @param {GifUpsertArgs} args - Arguments to update or create a Gif.
      * @example
-     * // Update or create a TimeBlock
-     * const timeBlock = await prisma.timeBlock.upsert({
+     * // Update or create a Gif
+     * const gif = await prisma.gif.upsert({
      *   create: {
-     *     // ... data to create a TimeBlock
+     *     // ... data to create a Gif
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the TimeBlock we want to update
+     *     // ... the filter for the Gif we want to update
      *   }
      * })
      */
-    upsert<T extends TimeBlockUpsertArgs>(args: SelectSubset<T, TimeBlockUpsertArgs<ExtArgs>>): Prisma__TimeBlockClient<$Result.GetResult<Prisma.$TimeBlockPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends GifUpsertArgs>(args: SelectSubset<T, GifUpsertArgs<ExtArgs>>): Prisma__GifClient<$Result.GetResult<Prisma.$GifPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of TimeBlocks.
+     * Count the number of Gifs.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockCountArgs} args - Arguments to filter TimeBlocks to count.
+     * @param {GifCountArgs} args - Arguments to filter Gifs to count.
      * @example
-     * // Count the number of TimeBlocks
-     * const count = await prisma.timeBlock.count({
+     * // Count the number of Gifs
+     * const count = await prisma.gif.count({
      *   where: {
-     *     // ... the filter for the TimeBlocks we want to count
+     *     // ... the filter for the Gifs we want to count
      *   }
      * })
     **/
-    count<T extends TimeBlockCountArgs>(
-      args?: Subset<T, TimeBlockCountArgs>,
+    count<T extends GifCountArgs>(
+      args?: Subset<T, GifCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], TimeBlockCountAggregateOutputType>
+          : GetScalarType<T['select'], GifCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a TimeBlock.
+     * Allows you to perform aggregations operations on a Gif.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {GifAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3844,13 +3826,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends TimeBlockAggregateArgs>(args: Subset<T, TimeBlockAggregateArgs>): Prisma.PrismaPromise<GetTimeBlockAggregateType<T>>
+    aggregate<T extends GifAggregateArgs>(args: Subset<T, GifAggregateArgs>): Prisma.PrismaPromise<GetGifAggregateType<T>>
 
     /**
-     * Group by TimeBlock.
+     * Group by Gif.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TimeBlockGroupByArgs} args - Group by arguments.
+     * @param {GifGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3865,14 +3847,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends TimeBlockGroupByArgs,
+      T extends GifGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: TimeBlockGroupByArgs['orderBy'] }
-        : { orderBy?: TimeBlockGroupByArgs['orderBy'] },
+        ? { orderBy: GifGroupByArgs['orderBy'] }
+        : { orderBy?: GifGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3921,22 +3903,21 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, TimeBlockGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTimeBlockGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, GifGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGifGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the TimeBlock model
+   * Fields of the Gif model
    */
-  readonly fields: TimeBlockFieldRefs;
+  readonly fields: GifFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for TimeBlock.
+   * The delegate class that acts as a "Promise-like" for Gif.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__TimeBlockClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__GifClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    appointments<T extends TimeBlock$appointmentsArgs<ExtArgs> = {}>(args?: Subset<T, TimeBlock$appointmentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppointmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3963,439 +3944,375 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the TimeBlock model
+   * Fields of the Gif model
    */
-  interface TimeBlockFieldRefs {
-    readonly id: FieldRef<"TimeBlock", 'Int'>
-    readonly startTime: FieldRef<"TimeBlock", 'DateTime'>
-    readonly endTime: FieldRef<"TimeBlock", 'DateTime'>
+  interface GifFieldRefs {
+    readonly id: FieldRef<"Gif", 'Int'>
+    readonly word: FieldRef<"Gif", 'String'>
+    readonly gifUrl: FieldRef<"Gif", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * TimeBlock findUnique
+   * Gif findUnique
    */
-  export type TimeBlockFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Gif to fetch.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * Filter, which TimeBlock to fetch.
-     */
-    where: TimeBlockWhereUniqueInput
+    where: GifWhereUniqueInput
   }
 
   /**
-   * TimeBlock findUniqueOrThrow
+   * Gif findUniqueOrThrow
    */
-  export type TimeBlockFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Gif to fetch.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * Filter, which TimeBlock to fetch.
-     */
-    where: TimeBlockWhereUniqueInput
+    where: GifWhereUniqueInput
   }
 
   /**
-   * TimeBlock findFirst
+   * Gif findFirst
    */
-  export type TimeBlockFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Gif to fetch.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * Filter, which TimeBlock to fetch.
-     */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of TimeBlocks to fetch.
+     * Determine the order of Gifs to fetch.
      */
-    orderBy?: TimeBlockOrderByWithRelationInput | TimeBlockOrderByWithRelationInput[]
+    orderBy?: GifOrderByWithRelationInput | GifOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for TimeBlocks.
+     * Sets the position for searching for Gifs.
      */
-    cursor?: TimeBlockWhereUniqueInput
+    cursor?: GifWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` TimeBlocks from the position of the cursor.
+     * Take `±n` Gifs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` TimeBlocks.
+     * Skip the first `n` Gifs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of TimeBlocks.
+     * Filter by unique combinations of Gifs.
      */
-    distinct?: TimeBlockScalarFieldEnum | TimeBlockScalarFieldEnum[]
+    distinct?: GifScalarFieldEnum | GifScalarFieldEnum[]
   }
 
   /**
-   * TimeBlock findFirstOrThrow
+   * Gif findFirstOrThrow
    */
-  export type TimeBlockFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Gif to fetch.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * Filter, which TimeBlock to fetch.
-     */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of TimeBlocks to fetch.
+     * Determine the order of Gifs to fetch.
      */
-    orderBy?: TimeBlockOrderByWithRelationInput | TimeBlockOrderByWithRelationInput[]
+    orderBy?: GifOrderByWithRelationInput | GifOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for TimeBlocks.
+     * Sets the position for searching for Gifs.
      */
-    cursor?: TimeBlockWhereUniqueInput
+    cursor?: GifWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` TimeBlocks from the position of the cursor.
+     * Take `±n` Gifs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` TimeBlocks.
+     * Skip the first `n` Gifs.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of TimeBlocks.
+     * Filter by unique combinations of Gifs.
      */
-    distinct?: TimeBlockScalarFieldEnum | TimeBlockScalarFieldEnum[]
+    distinct?: GifScalarFieldEnum | GifScalarFieldEnum[]
   }
 
   /**
-   * TimeBlock findMany
+   * Gif findMany
    */
-  export type TimeBlockFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Gifs to fetch.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * Filter, which TimeBlocks to fetch.
-     */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of TimeBlocks to fetch.
+     * Determine the order of Gifs to fetch.
      */
-    orderBy?: TimeBlockOrderByWithRelationInput | TimeBlockOrderByWithRelationInput[]
+    orderBy?: GifOrderByWithRelationInput | GifOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing TimeBlocks.
+     * Sets the position for listing Gifs.
      */
-    cursor?: TimeBlockWhereUniqueInput
+    cursor?: GifWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` TimeBlocks from the position of the cursor.
+     * Take `±n` Gifs from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` TimeBlocks.
+     * Skip the first `n` Gifs.
      */
     skip?: number
-    distinct?: TimeBlockScalarFieldEnum | TimeBlockScalarFieldEnum[]
+    distinct?: GifScalarFieldEnum | GifScalarFieldEnum[]
   }
 
   /**
-   * TimeBlock create
+   * Gif create
    */
-  export type TimeBlockCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * The data needed to create a Gif.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * The data needed to create a TimeBlock.
-     */
-    data: XOR<TimeBlockCreateInput, TimeBlockUncheckedCreateInput>
+    data: XOR<GifCreateInput, GifUncheckedCreateInput>
   }
 
   /**
-   * TimeBlock createMany
+   * Gif createMany
    */
-  export type TimeBlockCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many TimeBlocks.
+     * The data used to create many Gifs.
      */
-    data: TimeBlockCreateManyInput | TimeBlockCreateManyInput[]
+    data: GifCreateManyInput | GifCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * TimeBlock createManyAndReturn
+   * Gif createManyAndReturn
    */
-  export type TimeBlockCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelectCreateManyAndReturn<ExtArgs> | null
+    select?: GifSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * The data used to create many TimeBlocks.
+     * The data used to create many Gifs.
      */
-    data: TimeBlockCreateManyInput | TimeBlockCreateManyInput[]
+    data: GifCreateManyInput | GifCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * TimeBlock update
+   * Gif update
    */
-  export type TimeBlockUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * The data needed to update a Gif.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
+    data: XOR<GifUpdateInput, GifUncheckedUpdateInput>
     /**
-     * The data needed to update a TimeBlock.
+     * Choose, which Gif to update.
      */
-    data: XOR<TimeBlockUpdateInput, TimeBlockUncheckedUpdateInput>
-    /**
-     * Choose, which TimeBlock to update.
-     */
-    where: TimeBlockWhereUniqueInput
+    where: GifWhereUniqueInput
   }
 
   /**
-   * TimeBlock updateMany
+   * Gif updateMany
    */
-  export type TimeBlockUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update TimeBlocks.
+     * The data used to update Gifs.
      */
-    data: XOR<TimeBlockUpdateManyMutationInput, TimeBlockUncheckedUpdateManyInput>
+    data: XOR<GifUpdateManyMutationInput, GifUncheckedUpdateManyInput>
     /**
-     * Filter which TimeBlocks to update
+     * Filter which Gifs to update
      */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
-     * Limit how many TimeBlocks to update.
+     * Limit how many Gifs to update.
      */
     limit?: number
   }
 
   /**
-   * TimeBlock updateManyAndReturn
+   * Gif updateManyAndReturn
    */
-  export type TimeBlockUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: GifSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * The data used to update TimeBlocks.
+     * The data used to update Gifs.
      */
-    data: XOR<TimeBlockUpdateManyMutationInput, TimeBlockUncheckedUpdateManyInput>
+    data: XOR<GifUpdateManyMutationInput, GifUncheckedUpdateManyInput>
     /**
-     * Filter which TimeBlocks to update
+     * Filter which Gifs to update
      */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
-     * Limit how many TimeBlocks to update.
+     * Limit how many Gifs to update.
      */
     limit?: number
   }
 
   /**
-   * TimeBlock upsert
+   * Gif upsert
    */
-  export type TimeBlockUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * The filter to search for the Gif to update in case it exists.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
+    where: GifWhereUniqueInput
     /**
-     * The filter to search for the TimeBlock to update in case it exists.
+     * In case the Gif found by the `where` argument doesn't exist, create a new Gif with this data.
      */
-    where: TimeBlockWhereUniqueInput
+    create: XOR<GifCreateInput, GifUncheckedCreateInput>
     /**
-     * In case the TimeBlock found by the `where` argument doesn't exist, create a new TimeBlock with this data.
+     * In case the Gif was found with the provided `where` argument, update it with this data.
      */
-    create: XOR<TimeBlockCreateInput, TimeBlockUncheckedCreateInput>
-    /**
-     * In case the TimeBlock was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<TimeBlockUpdateInput, TimeBlockUncheckedUpdateInput>
+    update: XOR<GifUpdateInput, GifUncheckedUpdateInput>
   }
 
   /**
-   * TimeBlock delete
+   * Gif delete
    */
-  export type TimeBlockDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the TimeBlock
+     * Select specific fields to fetch from the Gif
      */
-    select?: TimeBlockSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the TimeBlock
+     * Omit specific fields from the Gif
      */
-    omit?: TimeBlockOmit<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter which Gif to delete.
      */
-    include?: TimeBlockInclude<ExtArgs> | null
-    /**
-     * Filter which TimeBlock to delete.
-     */
-    where: TimeBlockWhereUniqueInput
+    where: GifWhereUniqueInput
   }
 
   /**
-   * TimeBlock deleteMany
+   * Gif deleteMany
    */
-  export type TimeBlockDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which TimeBlocks to delete
+     * Filter which Gifs to delete
      */
-    where?: TimeBlockWhereInput
+    where?: GifWhereInput
     /**
-     * Limit how many TimeBlocks to delete.
+     * Limit how many Gifs to delete.
      */
     limit?: number
   }
 
   /**
-   * TimeBlock.appointments
+   * Gif without action
    */
-  export type TimeBlock$appointmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type GifDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appointment
+     * Select specific fields to fetch from the Gif
      */
-    select?: AppointmentSelect<ExtArgs> | null
+    select?: GifSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appointment
+     * Omit specific fields from the Gif
      */
-    omit?: AppointmentOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: AppointmentInclude<ExtArgs> | null
-    where?: AppointmentWhereInput
-    orderBy?: AppointmentOrderByWithRelationInput | AppointmentOrderByWithRelationInput[]
-    cursor?: AppointmentWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: AppointmentScalarFieldEnum | AppointmentScalarFieldEnum[]
-  }
-
-  /**
-   * TimeBlock without action
-   */
-  export type TimeBlockDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the TimeBlock
-     */
-    select?: TimeBlockSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the TimeBlock
-     */
-    omit?: TimeBlockOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: TimeBlockInclude<ExtArgs> | null
+    omit?: GifOmit<ExtArgs> | null
   }
 
 
@@ -4415,32 +4332,35 @@ export namespace Prisma {
 
   export const UserScalarFieldEnum: {
     id: 'id',
-    name: 'name',
     email: 'email',
     password: 'password',
-    role: 'role'
+    name: 'name',
+    role: 'role',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-  export const AppointmentScalarFieldEnum: {
+  export const TranslationScalarFieldEnum: {
     id: 'id',
-    date: 'date',
     userId: 'userId',
-    timeBlockId: 'timeBlockId'
+    videoPath: 'videoPath',
+    result: 'result',
+    createdAt: 'createdAt'
   };
 
-  export type AppointmentScalarFieldEnum = (typeof AppointmentScalarFieldEnum)[keyof typeof AppointmentScalarFieldEnum]
+  export type TranslationScalarFieldEnum = (typeof TranslationScalarFieldEnum)[keyof typeof TranslationScalarFieldEnum]
 
 
-  export const TimeBlockScalarFieldEnum: {
+  export const GifScalarFieldEnum: {
     id: 'id',
-    startTime: 'startTime',
-    endTime: 'endTime'
+    word: 'word',
+    gifUrl: 'gifUrl'
   };
 
-  export type TimeBlockScalarFieldEnum = (typeof TimeBlockScalarFieldEnum)[keyof typeof TimeBlockScalarFieldEnum]
+  export type GifScalarFieldEnum = (typeof GifScalarFieldEnum)[keyof typeof GifScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -4451,12 +4371,28 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+  export const JsonNullValueInput: {
+    JsonNull: typeof JsonNull
+  };
+
+  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
   export const QueryMode: {
     default: 'default',
     insensitive: 'insensitive'
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const JsonNullValueFilter: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull,
+    AnyNull: typeof AnyNull
+  };
+
+  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
   /**
@@ -4521,6 +4457,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Json'
+   */
+  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+  /**
+   * Reference to a field of type 'QueryMode'
+   */
+  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4542,20 +4492,24 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     id?: IntFilter<"User"> | number
-    name?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    name?: StringFilter<"User"> | string
     role?: EnumRoleFilter<"User"> | $Enums.Role
-    appointments?: AppointmentListRelationFilter
+    createdAt?: DateTimeFilter<"User"> | Date | string
+    updatedAt?: DateTimeFilter<"User"> | Date | string
+    translations?: TranslationListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    name?: SortOrder
     role?: SortOrder
-    appointments?: AppointmentOrderByRelationAggregateInput
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    translations?: TranslationOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -4564,18 +4518,22 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    name?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    name?: StringFilter<"User"> | string
     role?: EnumRoleFilter<"User"> | $Enums.Role
-    appointments?: AppointmentListRelationFilter
+    createdAt?: DateTimeFilter<"User"> | Date | string
+    updatedAt?: DateTimeFilter<"User"> | Date | string
+    translations?: TranslationListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    name?: SortOrder
     role?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -4588,256 +4546,275 @@ export namespace Prisma {
     OR?: UserScalarWhereWithAggregatesInput[]
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"User"> | number
-    name?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
+    name?: StringWithAggregatesFilter<"User"> | string
     role?: EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
+    createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
   }
 
-  export type AppointmentWhereInput = {
-    AND?: AppointmentWhereInput | AppointmentWhereInput[]
-    OR?: AppointmentWhereInput[]
-    NOT?: AppointmentWhereInput | AppointmentWhereInput[]
-    id?: IntFilter<"Appointment"> | number
-    date?: DateTimeFilter<"Appointment"> | Date | string
-    userId?: IntFilter<"Appointment"> | number
-    timeBlockId?: IntFilter<"Appointment"> | number
+  export type TranslationWhereInput = {
+    AND?: TranslationWhereInput | TranslationWhereInput[]
+    OR?: TranslationWhereInput[]
+    NOT?: TranslationWhereInput | TranslationWhereInput[]
+    id?: IntFilter<"Translation"> | number
+    userId?: IntFilter<"Translation"> | number
+    videoPath?: StringFilter<"Translation"> | string
+    result?: JsonFilter<"Translation">
+    createdAt?: DateTimeFilter<"Translation"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    timeBlock?: XOR<TimeBlockScalarRelationFilter, TimeBlockWhereInput>
   }
 
-  export type AppointmentOrderByWithRelationInput = {
+  export type TranslationOrderByWithRelationInput = {
     id?: SortOrder
-    date?: SortOrder
     userId?: SortOrder
-    timeBlockId?: SortOrder
+    videoPath?: SortOrder
+    result?: SortOrder
+    createdAt?: SortOrder
     user?: UserOrderByWithRelationInput
-    timeBlock?: TimeBlockOrderByWithRelationInput
   }
 
-  export type AppointmentWhereUniqueInput = Prisma.AtLeast<{
+  export type TranslationWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: AppointmentWhereInput | AppointmentWhereInput[]
-    OR?: AppointmentWhereInput[]
-    NOT?: AppointmentWhereInput | AppointmentWhereInput[]
-    date?: DateTimeFilter<"Appointment"> | Date | string
-    userId?: IntFilter<"Appointment"> | number
-    timeBlockId?: IntFilter<"Appointment"> | number
+    AND?: TranslationWhereInput | TranslationWhereInput[]
+    OR?: TranslationWhereInput[]
+    NOT?: TranslationWhereInput | TranslationWhereInput[]
+    userId?: IntFilter<"Translation"> | number
+    videoPath?: StringFilter<"Translation"> | string
+    result?: JsonFilter<"Translation">
+    createdAt?: DateTimeFilter<"Translation"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    timeBlock?: XOR<TimeBlockScalarRelationFilter, TimeBlockWhereInput>
   }, "id">
 
-  export type AppointmentOrderByWithAggregationInput = {
+  export type TranslationOrderByWithAggregationInput = {
     id?: SortOrder
-    date?: SortOrder
     userId?: SortOrder
-    timeBlockId?: SortOrder
-    _count?: AppointmentCountOrderByAggregateInput
-    _avg?: AppointmentAvgOrderByAggregateInput
-    _max?: AppointmentMaxOrderByAggregateInput
-    _min?: AppointmentMinOrderByAggregateInput
-    _sum?: AppointmentSumOrderByAggregateInput
+    videoPath?: SortOrder
+    result?: SortOrder
+    createdAt?: SortOrder
+    _count?: TranslationCountOrderByAggregateInput
+    _avg?: TranslationAvgOrderByAggregateInput
+    _max?: TranslationMaxOrderByAggregateInput
+    _min?: TranslationMinOrderByAggregateInput
+    _sum?: TranslationSumOrderByAggregateInput
   }
 
-  export type AppointmentScalarWhereWithAggregatesInput = {
-    AND?: AppointmentScalarWhereWithAggregatesInput | AppointmentScalarWhereWithAggregatesInput[]
-    OR?: AppointmentScalarWhereWithAggregatesInput[]
-    NOT?: AppointmentScalarWhereWithAggregatesInput | AppointmentScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Appointment"> | number
-    date?: DateTimeWithAggregatesFilter<"Appointment"> | Date | string
-    userId?: IntWithAggregatesFilter<"Appointment"> | number
-    timeBlockId?: IntWithAggregatesFilter<"Appointment"> | number
+  export type TranslationScalarWhereWithAggregatesInput = {
+    AND?: TranslationScalarWhereWithAggregatesInput | TranslationScalarWhereWithAggregatesInput[]
+    OR?: TranslationScalarWhereWithAggregatesInput[]
+    NOT?: TranslationScalarWhereWithAggregatesInput | TranslationScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Translation"> | number
+    userId?: IntWithAggregatesFilter<"Translation"> | number
+    videoPath?: StringWithAggregatesFilter<"Translation"> | string
+    result?: JsonWithAggregatesFilter<"Translation">
+    createdAt?: DateTimeWithAggregatesFilter<"Translation"> | Date | string
   }
 
-  export type TimeBlockWhereInput = {
-    AND?: TimeBlockWhereInput | TimeBlockWhereInput[]
-    OR?: TimeBlockWhereInput[]
-    NOT?: TimeBlockWhereInput | TimeBlockWhereInput[]
-    id?: IntFilter<"TimeBlock"> | number
-    startTime?: DateTimeFilter<"TimeBlock"> | Date | string
-    endTime?: DateTimeFilter<"TimeBlock"> | Date | string
-    appointments?: AppointmentListRelationFilter
+  export type GifWhereInput = {
+    AND?: GifWhereInput | GifWhereInput[]
+    OR?: GifWhereInput[]
+    NOT?: GifWhereInput | GifWhereInput[]
+    id?: IntFilter<"Gif"> | number
+    word?: StringFilter<"Gif"> | string
+    gifUrl?: StringFilter<"Gif"> | string
   }
 
-  export type TimeBlockOrderByWithRelationInput = {
+  export type GifOrderByWithRelationInput = {
     id?: SortOrder
-    startTime?: SortOrder
-    endTime?: SortOrder
-    appointments?: AppointmentOrderByRelationAggregateInput
+    word?: SortOrder
+    gifUrl?: SortOrder
   }
 
-  export type TimeBlockWhereUniqueInput = Prisma.AtLeast<{
+  export type GifWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: TimeBlockWhereInput | TimeBlockWhereInput[]
-    OR?: TimeBlockWhereInput[]
-    NOT?: TimeBlockWhereInput | TimeBlockWhereInput[]
-    startTime?: DateTimeFilter<"TimeBlock"> | Date | string
-    endTime?: DateTimeFilter<"TimeBlock"> | Date | string
-    appointments?: AppointmentListRelationFilter
-  }, "id">
+    word?: string
+    AND?: GifWhereInput | GifWhereInput[]
+    OR?: GifWhereInput[]
+    NOT?: GifWhereInput | GifWhereInput[]
+    gifUrl?: StringFilter<"Gif"> | string
+  }, "id" | "word">
 
-  export type TimeBlockOrderByWithAggregationInput = {
+  export type GifOrderByWithAggregationInput = {
     id?: SortOrder
-    startTime?: SortOrder
-    endTime?: SortOrder
-    _count?: TimeBlockCountOrderByAggregateInput
-    _avg?: TimeBlockAvgOrderByAggregateInput
-    _max?: TimeBlockMaxOrderByAggregateInput
-    _min?: TimeBlockMinOrderByAggregateInput
-    _sum?: TimeBlockSumOrderByAggregateInput
+    word?: SortOrder
+    gifUrl?: SortOrder
+    _count?: GifCountOrderByAggregateInput
+    _avg?: GifAvgOrderByAggregateInput
+    _max?: GifMaxOrderByAggregateInput
+    _min?: GifMinOrderByAggregateInput
+    _sum?: GifSumOrderByAggregateInput
   }
 
-  export type TimeBlockScalarWhereWithAggregatesInput = {
-    AND?: TimeBlockScalarWhereWithAggregatesInput | TimeBlockScalarWhereWithAggregatesInput[]
-    OR?: TimeBlockScalarWhereWithAggregatesInput[]
-    NOT?: TimeBlockScalarWhereWithAggregatesInput | TimeBlockScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"TimeBlock"> | number
-    startTime?: DateTimeWithAggregatesFilter<"TimeBlock"> | Date | string
-    endTime?: DateTimeWithAggregatesFilter<"TimeBlock"> | Date | string
+  export type GifScalarWhereWithAggregatesInput = {
+    AND?: GifScalarWhereWithAggregatesInput | GifScalarWhereWithAggregatesInput[]
+    OR?: GifScalarWhereWithAggregatesInput[]
+    NOT?: GifScalarWhereWithAggregatesInput | GifScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Gif"> | number
+    word?: StringWithAggregatesFilter<"Gif"> | string
+    gifUrl?: StringWithAggregatesFilter<"Gif"> | string
   }
 
   export type UserCreateInput = {
-    name: string
     email: string
     password: string
+    name: string
     role: $Enums.Role
-    appointments?: AppointmentCreateNestedManyWithoutUserInput
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    translations?: TranslationCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
     id?: number
-    name: string
     email: string
     password: string
+    name: string
     role: $Enums.Role
-    appointments?: AppointmentUncheckedCreateNestedManyWithoutUserInput
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    translations?: TranslationUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
-    appointments?: AppointmentUpdateManyWithoutUserNestedInput
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    translations?: TranslationUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
-    appointments?: AppointmentUncheckedUpdateManyWithoutUserNestedInput
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    translations?: TranslationUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
     id?: number
-    name: string
     email: string
     password: string
+    name: string
     role: $Enums.Role
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type UserUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppointmentCreateInput = {
-    date: Date | string
-    user: UserCreateNestedOneWithoutAppointmentsInput
-    timeBlock: TimeBlockCreateNestedOneWithoutAppointmentsInput
+  export type TranslationCreateInput = {
+    videoPath: string
+    result: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutTranslationsInput
   }
 
-  export type AppointmentUncheckedCreateInput = {
+  export type TranslationUncheckedCreateInput = {
     id?: number
-    date: Date | string
     userId: number
-    timeBlockId: number
+    videoPath: string
+    result: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
   }
 
-  export type AppointmentUpdateInput = {
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutAppointmentsNestedInput
-    timeBlock?: TimeBlockUpdateOneRequiredWithoutAppointmentsNestedInput
+  export type TranslationUpdateInput = {
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutTranslationsNestedInput
   }
 
-  export type AppointmentUncheckedUpdateInput = {
+  export type TranslationUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
-    timeBlockId?: IntFieldUpdateOperationsInput | number
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppointmentCreateManyInput = {
+  export type TranslationCreateManyInput = {
     id?: number
-    date: Date | string
     userId: number
-    timeBlockId: number
+    videoPath: string
+    result: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
   }
 
-  export type AppointmentUpdateManyMutationInput = {
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type TranslationUpdateManyMutationInput = {
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppointmentUncheckedUpdateManyInput = {
+  export type TranslationUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: IntFieldUpdateOperationsInput | number
-    timeBlockId?: IntFieldUpdateOperationsInput | number
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TimeBlockCreateInput = {
-    startTime: Date | string
-    endTime: Date | string
-    appointments?: AppointmentCreateNestedManyWithoutTimeBlockInput
+  export type GifCreateInput = {
+    word: string
+    gifUrl: string
   }
 
-  export type TimeBlockUncheckedCreateInput = {
+  export type GifUncheckedCreateInput = {
     id?: number
-    startTime: Date | string
-    endTime: Date | string
-    appointments?: AppointmentUncheckedCreateNestedManyWithoutTimeBlockInput
+    word: string
+    gifUrl: string
   }
 
-  export type TimeBlockUpdateInput = {
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    appointments?: AppointmentUpdateManyWithoutTimeBlockNestedInput
+  export type GifUpdateInput = {
+    word?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TimeBlockUncheckedUpdateInput = {
+  export type GifUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    appointments?: AppointmentUncheckedUpdateManyWithoutTimeBlockNestedInput
+    word?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TimeBlockCreateManyInput = {
+  export type GifCreateManyInput = {
     id?: number
-    startTime: Date | string
-    endTime: Date | string
+    word: string
+    gifUrl: string
   }
 
-  export type TimeBlockUpdateManyMutationInput = {
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type GifUpdateManyMutationInput = {
+    word?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TimeBlockUncheckedUpdateManyInput = {
+  export type GifUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    word?: StringFieldUpdateOperationsInput | string
+    gifUrl?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -4873,22 +4850,35 @@ export namespace Prisma {
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
-  export type AppointmentListRelationFilter = {
-    every?: AppointmentWhereInput
-    some?: AppointmentWhereInput
-    none?: AppointmentWhereInput
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type AppointmentOrderByRelationAggregateInput = {
+  export type TranslationListRelationFilter = {
+    every?: TranslationWhereInput
+    some?: TranslationWhereInput
+    none?: TranslationWhereInput
+  }
+
+  export type TranslationOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    name?: SortOrder
     role?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -4897,18 +4887,22 @@ export namespace Prisma {
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    name?: SortOrder
     role?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    name?: SortOrder
     role?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -4959,60 +4953,6 @@ export namespace Prisma {
     _max?: NestedEnumRoleFilter<$PrismaModel>
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type UserScalarRelationFilter = {
-    is?: UserWhereInput
-    isNot?: UserWhereInput
-  }
-
-  export type TimeBlockScalarRelationFilter = {
-    is?: TimeBlockWhereInput
-    isNot?: TimeBlockWhereInput
-  }
-
-  export type AppointmentCountOrderByAggregateInput = {
-    id?: SortOrder
-    date?: SortOrder
-    userId?: SortOrder
-    timeBlockId?: SortOrder
-  }
-
-  export type AppointmentAvgOrderByAggregateInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    timeBlockId?: SortOrder
-  }
-
-  export type AppointmentMaxOrderByAggregateInput = {
-    id?: SortOrder
-    date?: SortOrder
-    userId?: SortOrder
-    timeBlockId?: SortOrder
-  }
-
-  export type AppointmentMinOrderByAggregateInput = {
-    id?: SortOrder
-    date?: SortOrder
-    userId?: SortOrder
-    timeBlockId?: SortOrder
-  }
-
-  export type AppointmentSumOrderByAggregateInput = {
-    id?: SortOrder
-    userId?: SortOrder
-    timeBlockId?: SortOrder
-  }
-
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -5026,45 +4966,131 @@ export namespace Prisma {
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
+  export type JsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
 
-  export type TimeBlockCountOrderByAggregateInput = {
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type UserScalarRelationFilter = {
+    is?: UserWhereInput
+    isNot?: UserWhereInput
+  }
+
+  export type TranslationCountOrderByAggregateInput = {
     id?: SortOrder
-    startTime?: SortOrder
-    endTime?: SortOrder
+    userId?: SortOrder
+    videoPath?: SortOrder
+    result?: SortOrder
+    createdAt?: SortOrder
   }
 
-  export type TimeBlockAvgOrderByAggregateInput = {
+  export type TranslationAvgOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type TranslationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    videoPath?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TranslationMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    videoPath?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TranslationSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
+  }
+
+  export type GifCountOrderByAggregateInput = {
+    id?: SortOrder
+    word?: SortOrder
+    gifUrl?: SortOrder
+  }
+
+  export type GifAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type TimeBlockMaxOrderByAggregateInput = {
+  export type GifMaxOrderByAggregateInput = {
     id?: SortOrder
-    startTime?: SortOrder
-    endTime?: SortOrder
+    word?: SortOrder
+    gifUrl?: SortOrder
   }
 
-  export type TimeBlockMinOrderByAggregateInput = {
+  export type GifMinOrderByAggregateInput = {
     id?: SortOrder
-    startTime?: SortOrder
-    endTime?: SortOrder
+    word?: SortOrder
+    gifUrl?: SortOrder
   }
 
-  export type TimeBlockSumOrderByAggregateInput = {
+  export type GifSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type AppointmentCreateNestedManyWithoutUserInput = {
-    create?: XOR<AppointmentCreateWithoutUserInput, AppointmentUncheckedCreateWithoutUserInput> | AppointmentCreateWithoutUserInput[] | AppointmentUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutUserInput | AppointmentCreateOrConnectWithoutUserInput[]
-    createMany?: AppointmentCreateManyUserInputEnvelope
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
+  export type TranslationCreateNestedManyWithoutUserInput = {
+    create?: XOR<TranslationCreateWithoutUserInput, TranslationUncheckedCreateWithoutUserInput> | TranslationCreateWithoutUserInput[] | TranslationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TranslationCreateOrConnectWithoutUserInput | TranslationCreateOrConnectWithoutUserInput[]
+    createMany?: TranslationCreateManyUserInputEnvelope
+    connect?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
   }
 
-  export type AppointmentUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<AppointmentCreateWithoutUserInput, AppointmentUncheckedCreateWithoutUserInput> | AppointmentCreateWithoutUserInput[] | AppointmentUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutUserInput | AppointmentCreateOrConnectWithoutUserInput[]
-    createMany?: AppointmentCreateManyUserInputEnvelope
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
+  export type TranslationUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<TranslationCreateWithoutUserInput, TranslationUncheckedCreateWithoutUserInput> | TranslationCreateWithoutUserInput[] | TranslationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TranslationCreateOrConnectWithoutUserInput | TranslationCreateOrConnectWithoutUserInput[]
+    createMany?: TranslationCreateManyUserInputEnvelope
+    connect?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -5075,18 +5101,22 @@ export namespace Prisma {
     set?: $Enums.Role
   }
 
-  export type AppointmentUpdateManyWithoutUserNestedInput = {
-    create?: XOR<AppointmentCreateWithoutUserInput, AppointmentUncheckedCreateWithoutUserInput> | AppointmentCreateWithoutUserInput[] | AppointmentUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutUserInput | AppointmentCreateOrConnectWithoutUserInput[]
-    upsert?: AppointmentUpsertWithWhereUniqueWithoutUserInput | AppointmentUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: AppointmentCreateManyUserInputEnvelope
-    set?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    disconnect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    delete?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    update?: AppointmentUpdateWithWhereUniqueWithoutUserInput | AppointmentUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: AppointmentUpdateManyWithWhereWithoutUserInput | AppointmentUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: AppointmentScalarWhereInput | AppointmentScalarWhereInput[]
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
+  export type TranslationUpdateManyWithoutUserNestedInput = {
+    create?: XOR<TranslationCreateWithoutUserInput, TranslationUncheckedCreateWithoutUserInput> | TranslationCreateWithoutUserInput[] | TranslationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TranslationCreateOrConnectWithoutUserInput | TranslationCreateOrConnectWithoutUserInput[]
+    upsert?: TranslationUpsertWithWhereUniqueWithoutUserInput | TranslationUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: TranslationCreateManyUserInputEnvelope
+    set?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    disconnect?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    delete?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    connect?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    update?: TranslationUpdateWithWhereUniqueWithoutUserInput | TranslationUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: TranslationUpdateManyWithWhereWithoutUserInput | TranslationUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: TranslationScalarWhereInput | TranslationScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -5097,92 +5127,32 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type AppointmentUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<AppointmentCreateWithoutUserInput, AppointmentUncheckedCreateWithoutUserInput> | AppointmentCreateWithoutUserInput[] | AppointmentUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutUserInput | AppointmentCreateOrConnectWithoutUserInput[]
-    upsert?: AppointmentUpsertWithWhereUniqueWithoutUserInput | AppointmentUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: AppointmentCreateManyUserInputEnvelope
-    set?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    disconnect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    delete?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    update?: AppointmentUpdateWithWhereUniqueWithoutUserInput | AppointmentUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: AppointmentUpdateManyWithWhereWithoutUserInput | AppointmentUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: AppointmentScalarWhereInput | AppointmentScalarWhereInput[]
+  export type TranslationUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<TranslationCreateWithoutUserInput, TranslationUncheckedCreateWithoutUserInput> | TranslationCreateWithoutUserInput[] | TranslationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TranslationCreateOrConnectWithoutUserInput | TranslationCreateOrConnectWithoutUserInput[]
+    upsert?: TranslationUpsertWithWhereUniqueWithoutUserInput | TranslationUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: TranslationCreateManyUserInputEnvelope
+    set?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    disconnect?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    delete?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    connect?: TranslationWhereUniqueInput | TranslationWhereUniqueInput[]
+    update?: TranslationUpdateWithWhereUniqueWithoutUserInput | TranslationUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: TranslationUpdateManyWithWhereWithoutUserInput | TranslationUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: TranslationScalarWhereInput | TranslationScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutAppointmentsInput = {
-    create?: XOR<UserCreateWithoutAppointmentsInput, UserUncheckedCreateWithoutAppointmentsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutAppointmentsInput
+  export type UserCreateNestedOneWithoutTranslationsInput = {
+    create?: XOR<UserCreateWithoutTranslationsInput, UserUncheckedCreateWithoutTranslationsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTranslationsInput
     connect?: UserWhereUniqueInput
   }
 
-  export type TimeBlockCreateNestedOneWithoutAppointmentsInput = {
-    create?: XOR<TimeBlockCreateWithoutAppointmentsInput, TimeBlockUncheckedCreateWithoutAppointmentsInput>
-    connectOrCreate?: TimeBlockCreateOrConnectWithoutAppointmentsInput
-    connect?: TimeBlockWhereUniqueInput
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
-  export type UserUpdateOneRequiredWithoutAppointmentsNestedInput = {
-    create?: XOR<UserCreateWithoutAppointmentsInput, UserUncheckedCreateWithoutAppointmentsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutAppointmentsInput
-    upsert?: UserUpsertWithoutAppointmentsInput
+  export type UserUpdateOneRequiredWithoutTranslationsNestedInput = {
+    create?: XOR<UserCreateWithoutTranslationsInput, UserUncheckedCreateWithoutTranslationsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTranslationsInput
+    upsert?: UserUpsertWithoutTranslationsInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutAppointmentsInput, UserUpdateWithoutAppointmentsInput>, UserUncheckedUpdateWithoutAppointmentsInput>
-  }
-
-  export type TimeBlockUpdateOneRequiredWithoutAppointmentsNestedInput = {
-    create?: XOR<TimeBlockCreateWithoutAppointmentsInput, TimeBlockUncheckedCreateWithoutAppointmentsInput>
-    connectOrCreate?: TimeBlockCreateOrConnectWithoutAppointmentsInput
-    upsert?: TimeBlockUpsertWithoutAppointmentsInput
-    connect?: TimeBlockWhereUniqueInput
-    update?: XOR<XOR<TimeBlockUpdateToOneWithWhereWithoutAppointmentsInput, TimeBlockUpdateWithoutAppointmentsInput>, TimeBlockUncheckedUpdateWithoutAppointmentsInput>
-  }
-
-  export type AppointmentCreateNestedManyWithoutTimeBlockInput = {
-    create?: XOR<AppointmentCreateWithoutTimeBlockInput, AppointmentUncheckedCreateWithoutTimeBlockInput> | AppointmentCreateWithoutTimeBlockInput[] | AppointmentUncheckedCreateWithoutTimeBlockInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutTimeBlockInput | AppointmentCreateOrConnectWithoutTimeBlockInput[]
-    createMany?: AppointmentCreateManyTimeBlockInputEnvelope
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-  }
-
-  export type AppointmentUncheckedCreateNestedManyWithoutTimeBlockInput = {
-    create?: XOR<AppointmentCreateWithoutTimeBlockInput, AppointmentUncheckedCreateWithoutTimeBlockInput> | AppointmentCreateWithoutTimeBlockInput[] | AppointmentUncheckedCreateWithoutTimeBlockInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutTimeBlockInput | AppointmentCreateOrConnectWithoutTimeBlockInput[]
-    createMany?: AppointmentCreateManyTimeBlockInputEnvelope
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-  }
-
-  export type AppointmentUpdateManyWithoutTimeBlockNestedInput = {
-    create?: XOR<AppointmentCreateWithoutTimeBlockInput, AppointmentUncheckedCreateWithoutTimeBlockInput> | AppointmentCreateWithoutTimeBlockInput[] | AppointmentUncheckedCreateWithoutTimeBlockInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutTimeBlockInput | AppointmentCreateOrConnectWithoutTimeBlockInput[]
-    upsert?: AppointmentUpsertWithWhereUniqueWithoutTimeBlockInput | AppointmentUpsertWithWhereUniqueWithoutTimeBlockInput[]
-    createMany?: AppointmentCreateManyTimeBlockInputEnvelope
-    set?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    disconnect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    delete?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    update?: AppointmentUpdateWithWhereUniqueWithoutTimeBlockInput | AppointmentUpdateWithWhereUniqueWithoutTimeBlockInput[]
-    updateMany?: AppointmentUpdateManyWithWhereWithoutTimeBlockInput | AppointmentUpdateManyWithWhereWithoutTimeBlockInput[]
-    deleteMany?: AppointmentScalarWhereInput | AppointmentScalarWhereInput[]
-  }
-
-  export type AppointmentUncheckedUpdateManyWithoutTimeBlockNestedInput = {
-    create?: XOR<AppointmentCreateWithoutTimeBlockInput, AppointmentUncheckedCreateWithoutTimeBlockInput> | AppointmentCreateWithoutTimeBlockInput[] | AppointmentUncheckedCreateWithoutTimeBlockInput[]
-    connectOrCreate?: AppointmentCreateOrConnectWithoutTimeBlockInput | AppointmentCreateOrConnectWithoutTimeBlockInput[]
-    upsert?: AppointmentUpsertWithWhereUniqueWithoutTimeBlockInput | AppointmentUpsertWithWhereUniqueWithoutTimeBlockInput[]
-    createMany?: AppointmentCreateManyTimeBlockInputEnvelope
-    set?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    disconnect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    delete?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    connect?: AppointmentWhereUniqueInput | AppointmentWhereUniqueInput[]
-    update?: AppointmentUpdateWithWhereUniqueWithoutTimeBlockInput | AppointmentUpdateWithWhereUniqueWithoutTimeBlockInput[]
-    updateMany?: AppointmentUpdateManyWithWhereWithoutTimeBlockInput | AppointmentUpdateManyWithWhereWithoutTimeBlockInput[]
-    deleteMany?: AppointmentScalarWhereInput | AppointmentScalarWhereInput[]
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTranslationsInput, UserUpdateWithoutTranslationsInput>, UserUncheckedUpdateWithoutTranslationsInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -5215,6 +5185,17 @@ export namespace Prisma {
     in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -5271,17 +5252,6 @@ export namespace Prisma {
     _max?: NestedEnumRoleFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -5295,219 +5265,159 @@ export namespace Prisma {
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
+  export type NestedJsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
 
-  export type AppointmentCreateWithoutUserInput = {
-    date: Date | string
-    timeBlock: TimeBlockCreateNestedOneWithoutAppointmentsInput
+  export type NestedJsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
-  export type AppointmentUncheckedCreateWithoutUserInput = {
+  export type TranslationCreateWithoutUserInput = {
+    videoPath: string
+    result: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+  }
+
+  export type TranslationUncheckedCreateWithoutUserInput = {
     id?: number
-    date: Date | string
-    timeBlockId: number
+    videoPath: string
+    result: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
   }
 
-  export type AppointmentCreateOrConnectWithoutUserInput = {
-    where: AppointmentWhereUniqueInput
-    create: XOR<AppointmentCreateWithoutUserInput, AppointmentUncheckedCreateWithoutUserInput>
+  export type TranslationCreateOrConnectWithoutUserInput = {
+    where: TranslationWhereUniqueInput
+    create: XOR<TranslationCreateWithoutUserInput, TranslationUncheckedCreateWithoutUserInput>
   }
 
-  export type AppointmentCreateManyUserInputEnvelope = {
-    data: AppointmentCreateManyUserInput | AppointmentCreateManyUserInput[]
+  export type TranslationCreateManyUserInputEnvelope = {
+    data: TranslationCreateManyUserInput | TranslationCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
-  export type AppointmentUpsertWithWhereUniqueWithoutUserInput = {
-    where: AppointmentWhereUniqueInput
-    update: XOR<AppointmentUpdateWithoutUserInput, AppointmentUncheckedUpdateWithoutUserInput>
-    create: XOR<AppointmentCreateWithoutUserInput, AppointmentUncheckedCreateWithoutUserInput>
+  export type TranslationUpsertWithWhereUniqueWithoutUserInput = {
+    where: TranslationWhereUniqueInput
+    update: XOR<TranslationUpdateWithoutUserInput, TranslationUncheckedUpdateWithoutUserInput>
+    create: XOR<TranslationCreateWithoutUserInput, TranslationUncheckedCreateWithoutUserInput>
   }
 
-  export type AppointmentUpdateWithWhereUniqueWithoutUserInput = {
-    where: AppointmentWhereUniqueInput
-    data: XOR<AppointmentUpdateWithoutUserInput, AppointmentUncheckedUpdateWithoutUserInput>
+  export type TranslationUpdateWithWhereUniqueWithoutUserInput = {
+    where: TranslationWhereUniqueInput
+    data: XOR<TranslationUpdateWithoutUserInput, TranslationUncheckedUpdateWithoutUserInput>
   }
 
-  export type AppointmentUpdateManyWithWhereWithoutUserInput = {
-    where: AppointmentScalarWhereInput
-    data: XOR<AppointmentUpdateManyMutationInput, AppointmentUncheckedUpdateManyWithoutUserInput>
+  export type TranslationUpdateManyWithWhereWithoutUserInput = {
+    where: TranslationScalarWhereInput
+    data: XOR<TranslationUpdateManyMutationInput, TranslationUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type AppointmentScalarWhereInput = {
-    AND?: AppointmentScalarWhereInput | AppointmentScalarWhereInput[]
-    OR?: AppointmentScalarWhereInput[]
-    NOT?: AppointmentScalarWhereInput | AppointmentScalarWhereInput[]
-    id?: IntFilter<"Appointment"> | number
-    date?: DateTimeFilter<"Appointment"> | Date | string
-    userId?: IntFilter<"Appointment"> | number
-    timeBlockId?: IntFilter<"Appointment"> | number
+  export type TranslationScalarWhereInput = {
+    AND?: TranslationScalarWhereInput | TranslationScalarWhereInput[]
+    OR?: TranslationScalarWhereInput[]
+    NOT?: TranslationScalarWhereInput | TranslationScalarWhereInput[]
+    id?: IntFilter<"Translation"> | number
+    userId?: IntFilter<"Translation"> | number
+    videoPath?: StringFilter<"Translation"> | string
+    result?: JsonFilter<"Translation">
+    createdAt?: DateTimeFilter<"Translation"> | Date | string
   }
 
-  export type UserCreateWithoutAppointmentsInput = {
-    name: string
+  export type UserCreateWithoutTranslationsInput = {
     email: string
     password: string
+    name: string
     role: $Enums.Role
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type UserUncheckedCreateWithoutAppointmentsInput = {
+  export type UserUncheckedCreateWithoutTranslationsInput = {
     id?: number
-    name: string
     email: string
     password: string
+    name: string
     role: $Enums.Role
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type UserCreateOrConnectWithoutAppointmentsInput = {
+  export type UserCreateOrConnectWithoutTranslationsInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutAppointmentsInput, UserUncheckedCreateWithoutAppointmentsInput>
+    create: XOR<UserCreateWithoutTranslationsInput, UserUncheckedCreateWithoutTranslationsInput>
   }
 
-  export type TimeBlockCreateWithoutAppointmentsInput = {
-    startTime: Date | string
-    endTime: Date | string
-  }
-
-  export type TimeBlockUncheckedCreateWithoutAppointmentsInput = {
-    id?: number
-    startTime: Date | string
-    endTime: Date | string
-  }
-
-  export type TimeBlockCreateOrConnectWithoutAppointmentsInput = {
-    where: TimeBlockWhereUniqueInput
-    create: XOR<TimeBlockCreateWithoutAppointmentsInput, TimeBlockUncheckedCreateWithoutAppointmentsInput>
-  }
-
-  export type UserUpsertWithoutAppointmentsInput = {
-    update: XOR<UserUpdateWithoutAppointmentsInput, UserUncheckedUpdateWithoutAppointmentsInput>
-    create: XOR<UserCreateWithoutAppointmentsInput, UserUncheckedCreateWithoutAppointmentsInput>
+  export type UserUpsertWithoutTranslationsInput = {
+    update: XOR<UserUpdateWithoutTranslationsInput, UserUncheckedUpdateWithoutTranslationsInput>
+    create: XOR<UserCreateWithoutTranslationsInput, UserUncheckedCreateWithoutTranslationsInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutAppointmentsInput = {
+  export type UserUpdateToOneWithWhereWithoutTranslationsInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutAppointmentsInput, UserUncheckedUpdateWithoutAppointmentsInput>
+    data: XOR<UserUpdateWithoutTranslationsInput, UserUncheckedUpdateWithoutTranslationsInput>
   }
 
-  export type UserUpdateWithoutAppointmentsInput = {
-    name?: StringFieldUpdateOperationsInput | string
+  export type UserUpdateWithoutTranslationsInput = {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserUncheckedUpdateWithoutAppointmentsInput = {
+  export type UserUncheckedUpdateWithoutTranslationsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TimeBlockUpsertWithoutAppointmentsInput = {
-    update: XOR<TimeBlockUpdateWithoutAppointmentsInput, TimeBlockUncheckedUpdateWithoutAppointmentsInput>
-    create: XOR<TimeBlockCreateWithoutAppointmentsInput, TimeBlockUncheckedCreateWithoutAppointmentsInput>
-    where?: TimeBlockWhereInput
-  }
-
-  export type TimeBlockUpdateToOneWithWhereWithoutAppointmentsInput = {
-    where?: TimeBlockWhereInput
-    data: XOR<TimeBlockUpdateWithoutAppointmentsInput, TimeBlockUncheckedUpdateWithoutAppointmentsInput>
-  }
-
-  export type TimeBlockUpdateWithoutAppointmentsInput = {
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type TimeBlockUncheckedUpdateWithoutAppointmentsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type AppointmentCreateWithoutTimeBlockInput = {
-    date: Date | string
-    user: UserCreateNestedOneWithoutAppointmentsInput
-  }
-
-  export type AppointmentUncheckedCreateWithoutTimeBlockInput = {
+  export type TranslationCreateManyUserInput = {
     id?: number
-    date: Date | string
-    userId: number
+    videoPath: string
+    result: JsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
   }
 
-  export type AppointmentCreateOrConnectWithoutTimeBlockInput = {
-    where: AppointmentWhereUniqueInput
-    create: XOR<AppointmentCreateWithoutTimeBlockInput, AppointmentUncheckedCreateWithoutTimeBlockInput>
+  export type TranslationUpdateWithoutUserInput = {
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppointmentCreateManyTimeBlockInputEnvelope = {
-    data: AppointmentCreateManyTimeBlockInput | AppointmentCreateManyTimeBlockInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type AppointmentUpsertWithWhereUniqueWithoutTimeBlockInput = {
-    where: AppointmentWhereUniqueInput
-    update: XOR<AppointmentUpdateWithoutTimeBlockInput, AppointmentUncheckedUpdateWithoutTimeBlockInput>
-    create: XOR<AppointmentCreateWithoutTimeBlockInput, AppointmentUncheckedCreateWithoutTimeBlockInput>
-  }
-
-  export type AppointmentUpdateWithWhereUniqueWithoutTimeBlockInput = {
-    where: AppointmentWhereUniqueInput
-    data: XOR<AppointmentUpdateWithoutTimeBlockInput, AppointmentUncheckedUpdateWithoutTimeBlockInput>
-  }
-
-  export type AppointmentUpdateManyWithWhereWithoutTimeBlockInput = {
-    where: AppointmentScalarWhereInput
-    data: XOR<AppointmentUpdateManyMutationInput, AppointmentUncheckedUpdateManyWithoutTimeBlockInput>
-  }
-
-  export type AppointmentCreateManyUserInput = {
-    id?: number
-    date: Date | string
-    timeBlockId: number
-  }
-
-  export type AppointmentUpdateWithoutUserInput = {
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    timeBlock?: TimeBlockUpdateOneRequiredWithoutAppointmentsNestedInput
-  }
-
-  export type AppointmentUncheckedUpdateWithoutUserInput = {
+  export type TranslationUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    timeBlockId?: IntFieldUpdateOperationsInput | number
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppointmentUncheckedUpdateManyWithoutUserInput = {
+  export type TranslationUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    timeBlockId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type AppointmentCreateManyTimeBlockInput = {
-    id?: number
-    date: Date | string
-    userId: number
-  }
-
-  export type AppointmentUpdateWithoutTimeBlockInput = {
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutAppointmentsNestedInput
-  }
-
-  export type AppointmentUncheckedUpdateWithoutTimeBlockInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type AppointmentUncheckedUpdateManyWithoutTimeBlockInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: IntFieldUpdateOperationsInput | number
+    videoPath?: StringFieldUpdateOperationsInput | string
+    result?: JsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

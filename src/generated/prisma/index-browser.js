@@ -122,23 +122,26 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  name: 'name',
   email: 'email',
   password: 'password',
-  role: 'role'
+  name: 'name',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
-exports.Prisma.AppointmentScalarFieldEnum = {
+exports.Prisma.TranslationScalarFieldEnum = {
   id: 'id',
-  date: 'date',
   userId: 'userId',
-  timeBlockId: 'timeBlockId'
+  videoPath: 'videoPath',
+  result: 'result',
+  createdAt: 'createdAt'
 };
 
-exports.Prisma.TimeBlockScalarFieldEnum = {
+exports.Prisma.GifScalarFieldEnum = {
   id: 'id',
-  startTime: 'startTime',
-  endTime: 'endTime'
+  word: 'word',
+  gifUrl: 'gifUrl'
 };
 
 exports.Prisma.SortOrder = {
@@ -146,19 +149,29 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
+};
+
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
+
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
 exports.Role = exports.$Enums.Role = {
-  ADMIN: 'ADMIN',
-  USER: 'USER'
+  USER: 'USER',
+  ADMIN: 'ADMIN'
 };
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Appointment: 'Appointment',
-  TimeBlock: 'TimeBlock'
+  Translation: 'Translation',
+  Gif: 'Gif'
 };
 
 /**

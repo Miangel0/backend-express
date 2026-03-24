@@ -10,11 +10,12 @@ const { error } = require('console');
 
 const registerUser =  async (email, password, name) => {
     const hashedPassword = await bcrypt.hash(password, 10);
+    console.log(name, email, hashedPassword)
     const newUser = await prisma.user.create({
         data: {
         email,
         password: hashedPassword,
-        name,
+        name, 
         role: 'USER'
         }
     });

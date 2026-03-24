@@ -94,23 +94,26 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  name: 'name',
   email: 'email',
   password: 'password',
-  role: 'role'
+  name: 'name',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
-exports.Prisma.AppointmentScalarFieldEnum = {
+exports.Prisma.TranslationScalarFieldEnum = {
   id: 'id',
-  date: 'date',
   userId: 'userId',
-  timeBlockId: 'timeBlockId'
+  videoPath: 'videoPath',
+  result: 'result',
+  createdAt: 'createdAt'
 };
 
-exports.Prisma.TimeBlockScalarFieldEnum = {
+exports.Prisma.GifScalarFieldEnum = {
   id: 'id',
-  startTime: 'startTime',
-  endTime: 'endTime'
+  word: 'word',
+  gifUrl: 'gifUrl'
 };
 
 exports.Prisma.SortOrder = {
@@ -118,19 +121,29 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
+};
+
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
+
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
 exports.Role = exports.$Enums.Role = {
-  ADMIN: 'ADMIN',
-  USER: 'USER'
+  USER: 'USER',
+  ADMIN: 'ADMIN'
 };
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Appointment: 'Appointment',
-  TimeBlock: 'TimeBlock'
+  Translation: 'Translation',
+  Gif: 'Gif'
 };
 /**
  * Create the Client
@@ -140,10 +153,10 @@ const config = {
   "clientVersion": "7.3.0",
   "engineVersion": "9d6ad21cbbceab97458517b147a6a09ff43aa735",
   "activeProvider": "postgresql",
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel User {\n  id           Int           @id @default(autoincrement())\n  name         String\n  email        String        @unique\n  password     String\n  role         Role\n  appointments Appointment[]\n}\n\nenum Role {\n  ADMIN\n  USER\n}\n\nmodel Appointment {\n  id          Int       @id @default(autoincrement())\n  date        DateTime\n  user        User      @relation(fields: [userId], references: [id])\n  userId      Int\n  timeBlock   TimeBlock @relation(fields: [timeBlockId], references: [id])\n  timeBlockId Int\n}\n\nmodel TimeBlock {\n  id           Int           @id @default(autoincrement())\n  startTime    DateTime\n  endTime      DateTime\n  appointments Appointment[]\n}\n"
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel User {\n  id        Int      @id @default(autoincrement())\n  email     String   @unique\n  password  String\n  name      String\n  role      Role\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  // Relations\n  translations Translation[]\n}\n\nmodel Translation {\n  id        Int      @id @default(autoincrement())\n  userId    Int\n  videoPath String // Path to stored video file\n  result    Json // JSON result from AI service\n  createdAt DateTime @default(now())\n\n  // Relations\n  user User @relation(fields: [userId], references: [id], onDelete: Cascade)\n}\n\nmodel Gif {\n  id     Int    @id @default(autoincrement())\n  word   String @unique\n  gifUrl String\n}\n\nenum Role {\n  USER\n  ADMIN\n}\n"
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"appointments\",\"kind\":\"object\",\"type\":\"Appointment\",\"relationName\":\"AppointmentToUser\"}],\"dbName\":null},\"Appointment\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"AppointmentToUser\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"timeBlock\",\"kind\":\"object\",\"type\":\"TimeBlock\",\"relationName\":\"AppointmentToTimeBlock\"},{\"name\":\"timeBlockId\",\"kind\":\"scalar\",\"type\":\"Int\"}],\"dbName\":null},\"TimeBlock\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"startTime\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"endTime\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"appointments\",\"kind\":\"object\",\"type\":\"Appointment\",\"relationName\":\"AppointmentToTimeBlock\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"translations\",\"kind\":\"object\",\"type\":\"Translation\",\"relationName\":\"TranslationToUser\"}],\"dbName\":null},\"Translation\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"videoPath\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"result\",\"kind\":\"scalar\",\"type\":\"Json\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"TranslationToUser\"}],\"dbName\":null},\"Gif\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"word\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"gifUrl\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.compilerWasm = {
   getRuntime: async () => require('./query_compiler_fast_bg.js'),
